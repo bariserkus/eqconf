@@ -1,28 +1,86 @@
-\documentclass[red]{eqconf}
+\documentclass[english]{eqconf}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
- 
+%\usepackage{showframe}
+\usepackage{babel}
+
 \usepackage{blindtext}
  
-\title{Example to show how classes work}
-\author{Team Learn ShareLaTeX}
-\date{August 2014}
+\title{BİLDİRİ BAŞLIĞI\vspace{2pt}}
+\author{\textbf{%
+		Mücahit Bekin\textsuperscript{1} ve
+		Barış Erkuş\textsuperscript{2}\vspace{1pt}%
+}}
+
+\date{\small%
+\textsuperscript{\textbf{1}}
+\textit{Prof. Dr., İnşaat Müh. Bölümü, Abece Üniversitesi, Güzelkent}\\
+\textsuperscript{\textbf{2}}
+\textit{Araş. Gör., Jeofizik Müh. Bölümü, Abece Teknik Üniversitesi, 
+Büyükkent}\\
+\textit{Email: gönderenyazar@kurum}%
+}
+
  
 \begin{document}
  
 \maketitle
+
+\thispagestyle{firststyle}
  
-\noindent
-Let's begin with a simple working example here.
- 
+\begin{ozet}   %%% A Turkish Abstract has to be provided if the paper is in Turkish
+	
 \blindtext
+
+\textbf{ANAHTAR KELİMELER:} Anahtar Kelime
+
+\end{ozet}
+
+\begin{abstract} %%% All papers (both Turkish and English) have to provide English abstract
+	
+	\blindtext
+	
+\textbf{KEYWORDS:} Anahtar Kelime
+	
+\end{abstract}
+
+\vspace{1em}
  
-\section{Introduction}
+\section{INTRODUCTION}
  
 The Monty Hall problem...
+$x=\frac{a}{b}$
  
-\section{The same thing}
- 
-The Monty...
+\subsection{Theory}
+
+\blindtext
+
+\section{INTRODUCTION}
+
+\blindtext
+
+\subsubsection*{Theory}
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+
 
 \end{document}
