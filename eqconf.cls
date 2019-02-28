@@ -1,16 +1,23 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{eqconf}[2019/02/20 Latex Class for Earthquake Conference]
- 
-\newcommand{\headlinecolor}{\normalcolor}
-\LoadClass[12pt,a4paper]{article}
 
+%%% Language Variables
+\newif\if@EngLang
+\@EngLangfalse
+\newif\if@TurLang
+\@TurLangfalse
+
+%%% Options to Feed into Packages
+\DeclareOption{english}{\PassOptionsToClass{english}{article} \@EngLangtrue}
+\DeclareOption{turkish}{\PassOptionsToClass{turkish}{article} \@TurLangtrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
+\LoadClass[12pt, a4paper]{article}
+
+%%% Packages
 \usepackage{mathptmx}
 \renewcommand{\familydefault}{\rmdefault} 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[%
 verbose,
@@ -23,31 +30,31 @@ rmargin=20mm,
 footskip=10mm]{geometry}
 
 
+%%% Header Settings
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
-\lhead{\textbf{\textit{\small 5. Uluslararası Deprem Mühendisliği ve Sismoloji 
-Konferansı\\8-11 Ekim 2019 – ODTÜ – ANKARA}}}
+
+\if@EngLang
+	\def\headconf{\textbf{\textit{\small 5th International Conference on Earthquake Engineering and Seismology\\8-11 October 2019 – METU – Ankara / TURKEY}}}
+\fi
+\if@TurLang
+	\def\headconf{\textbf{\textit{\small 5. Uluslararası Deprem Mühendisliği ve Sismoloji 
+			Konferansı\\8-11 Ekim 2019 – ODTÜ – ANKARA}}}
+\fi
+
+\lhead{\headconf}
 \chead{}
 \rhead{\includegraphics[width=43.64mm]{header.png}\vspace{1pt}}
 
-\fancypagestyle{firststyle}
-{
-	\lhead{\textbf{\textit{\small 5. Uluslararası Deprem Mühendisliği ve 
-	Sismoloji 
-	Konferansı\\8-11 Ekim 2019 – ODTÜ – ANKARA}}}
+\fancypagestyle{firststyle}{
+	\lhead{\headconf}
 	\chead{}
-	\rhead{\includegraphics[width=43.64mm]{header.png}}
-}
-
-%\usepackage{titling}
-%\setlength{\droptitle}{-18.45mm}
-%\pretitle{\begin{center} \large \bf }
-%\posttitle{\par\end{center}}
-%\preauthor{\begin{center} \begin{tabular}[t]{c}}
-%\postauthor{\end{tabular} \par\end{center}}
+	\rhead{\includegraphics[width=43.64mm]{header.png}}}
 
 
+
+%%% Placement of the Title Page Items
 \def\@maketitle{%
 	\newpage
 	\null
@@ -66,23 +73,18 @@ Konferansı\\8-11 Ekim 2019 – ODTÜ – ANKARA}}}
 	\par
 	\vskip -0.5em}
 
+
+%%% Abstract Settings
 \newcommand\abstrname{ÖZET:}
 \newcommand\absengname{ABSTRACT:}
 \newenvironment{ozet}{
 	{\bfseries \abstrname \vspace{1.0ex \@plus .2ex}\vspace{\z@}}}
 
-\newenvironment{ozeteng}{\vspace{2.0ex \@plus .2ex}
+\renewenvironment{abstract}{\vspace{2.0ex \@plus .2ex}
 	{\bfseries \absengname \vspace{1.0ex \@plus .2ex}\vspace{\z@}}}
 
-%\renewcommand{\maketitle}{%
-%    \twocolumn[%
-%        \fontsize{50}{60}\fontfamily{phv}\fontseries{b}%
-%        \fontshape{sl}\selectfont\headlinecolor
-%        \@title
-%        \medskip
-%        ]%
-%}
 
+%%% Section Header Settings
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.25em}
 \renewcommand\thesection {\@arabic\c@section.}
@@ -109,7 +111,8 @@ Konferansı\\8-11 Ekim 2019 – ODTÜ – ANKARA}}}
 	{-1em}%
 	{\normalfont\normalsize\bfseries}}
 
-%\renewcommand{\normalsize}{\fontsize{9}{10}\selectfont}
+
+%%% Page Setup if Geometry Package is Not Used
 %\addtolength{\oddsidemargin}{-46.3pt}
 %\addtolength{\topmargin}{-55.5pt}
 %\setlength{\headheight}{27.50pt}
