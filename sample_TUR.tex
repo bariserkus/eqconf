@@ -32,18 +32,38 @@
 
 
 %%% BibLatex
-\usepackage{babel}
+\usepackage[]{babel}
 \usepackage{xkeyval}
-\usepackage[style=authoryear,maxcitenames=2,doi=false,isbn=false,url=false,eprint=false,giveninits]{biblatex}
+\usepackage[style=authoryear,maxcitenames=2,maxbibnames=10, 
+doi=false,isbn=false,url=false,eprint=false,giveninits]{biblatex}
 \usepackage{etoolbox}
-\usepackage{csquotes}
+\usepackage[style=english]{csquotes}
+%%% Türkçe Tanımlamalar
 \DefineBibliographyStrings{english}{%
-	references = {{KAYNAKLAR}},
+	references = {KAYNAKLAR},
 	and = {ve},
 	andothers = {vd.},
 	pages = {s.},
+	mathesis = {Yüksek Lisans Tezi},
+	phdthesis = {Doktora Tezi},
+	techreport = {Teknik Rapor},
 }
 \renewbibmacro{in:}{}
+\DeclareNameAlias{sortname}{family-given}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
+\DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+
+\renewbibmacro*{volume+number+eid}{%
+	\printfield{volume}%
+	%  \setunit*{\adddot}% DELETED
+	\setunit*{\addnbthinspace}% \addnbthinspace or \addnbspace
+	\printfield{number}%
+	\setunit{\addcomma\space}%
+	\printfield{eid}}
+
 \addbibresource{examplebib.bib}
 
 \begin{document}
@@ -95,7 +115,11 @@ Görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı s
 g(x)=\int_a^b f(x)dx, \quad x=\dfrac{a}{b}, \quad \boldgreek{\alpha}=\boldgreek{\upphi}
 \end{equation}
 
-Denklem (\ref{eq:energy})'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır. \textcite{Narasimhan2006,Erkus2006}'de gösterildiği üzere, yapılan çalışmaların uygun olduğu anlaşılmaktadır.
+Denklem (\ref{eq:energy})'de de görüldüğü üzere, sonuçların doğru olduğu 
+anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun 
+olacaktır. \textcite{Narasimhan2006, Erkus2006}'da gösterildiği üzere, yapılan 
+çalışmaların uygun olduğu anlaşılmaktadır. \cite{Bekin2018-MSThesis}, 
+\cite{Constantinou2011}.
 
 \blindtext
 
