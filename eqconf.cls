@@ -65,7 +65,7 @@ footskip=10mm]{geometry}
 		\vskip 0.7em%
 		{\lineskip .5em%
 			\begin{tabular}[t]{c}%
-				\@author
+				{\bfseries \@author}
 			\end{tabular}\par}%
 		\vskip 1em%
 		{\large \@date}%
@@ -91,6 +91,12 @@ footskip=10mm]{geometry}
 
 \newenvironment{keywords}{{\bfseries KEYWORDS:} }{\vspace{1em}}
 \newenvironment{anahtarkelimeler}{{\bfseries ANAHTAR KELİMELER:} }{\vspace{1em}}
+
+%%Authors
+\newcommand{\authorspec}[2]{\bfseries #2\textsuperscript{#1}}
+\newcommand{\affils}[2]{{\normalsize \bfseries \textsuperscript{#1}} \small {\itshape #2}}
+\newcommand{\email}{\itshape Email: }
+
 
 
 %%% Section Header Settings
