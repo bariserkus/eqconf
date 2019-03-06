@@ -24,7 +24,7 @@ verbose,
 tmargin=30mm,
 headsep=7.75mm,
 headheight=15mm,
-bmargin=25mm,
+bmargin=20mm,
 lmargin=20mm,
 rmargin=20mm,
 footskip=10mm]{geometry}
@@ -93,7 +93,7 @@ footskip=10mm]{geometry}
 \newenvironment{anahtarkelimeler}{{\bfseries ANAHTAR KELİMELER:} }{\vspace{1em}}
 
 %%Authors
-\newcommand{\authorspec}[2]{\bfseries #2\textsuperscript{#1}}
+\newcommand{\authorname}[2]{\bfseries #2\textsuperscript{#1}}
 \newcommand{\affils}[2]{{\normalsize \bfseries \textsuperscript{#1}} \small {\itshape #2}}
 \newcommand{\email}{\itshape Email: }
 
