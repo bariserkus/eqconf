@@ -11,6 +11,7 @@
 \DeclareOption{english}{\PassOptionsToClass{english}{article} \@EngLangtrue}
 \DeclareOption{turkish}{\PassOptionsToClass{turkish}{article} \@TurLangtrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+%\DeclareOption{10pt}{\renewcommand\@ptsize{0}}  %Added for figures
 \ProcessOptions\relax
 
 \LoadClass[12pt, a4paper]{article}
@@ -73,6 +74,11 @@ footskip=10mm]{geometry}
 	\par
 	\vskip -0.5em}
 
+\def\fixturkishbug{%
+	\if@TurLang
+	\shorthandoff{=}
+	\fi}
+
 
 %%% Abstract Settings
 \newcommand\abstrname{ÖZET:}
@@ -120,3 +126,44 @@ footskip=10mm]{geometry}
 %\setlength{\textwidth}{170mm}
 %\setlength{\textheight}{22cm}
 %\setcounter{secnumdepth}{0}
+
+
+%%%Figures and Tables
+\renewcommand \thefigure {\@arabic\c@figure}
+\def\fps@figure{tbp}
+\def\ftype@figure{1}
+\def\ext@figure{lof}
+\def\fnum@figure{\figurename\nobreakspace\thefigure}
+\renewenvironment{figure}
+{\@float{figure}}
+{\end@float}
+\renewenvironment{figure*}
+{\@dblfloat{figure}}
+{\end@dblfloat}
+
+
+
+\renewcommand\thetable{\@arabic\c@table}
+\def\fps@table{tbp}
+\def\ftype@table{2}
+\def\ext@table{lot}
+\def\fnum@table{\tablename\nobreakspace\thetable}
+\renewenvironment{table}
+{\@float{table}}
+{\end@float}
+\renewenvironment{table*}
+{\@dblfloat{table}}
+{\end@dblfloat}
+
+	\setlength\abovecaptionskip{10pt}
+	\setlength\belowcaptionskip{0pt}
+	\long\def\@makecaption#1#2{%
+		\vskip\abovecaptionskip
+		\sbox\@tempboxa{#1. #2}%
+		\ifdim \wd\@tempboxa >\hsize
+		{#1. #2\par}
+		\else
+		\global \@minipagefalse
+		\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+		\fi
+		\vskip\belowcaptionskip}
