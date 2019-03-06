@@ -73,15 +73,24 @@ footskip=10mm]{geometry}
 	\par
 	\vskip -0.5em}
 
+\def\fixturkishbug{%
+	\if@TurLang
+	\shorthandoff{=}
+	\fi}
+
 
 %%% Abstract Settings
 \newcommand\abstrname{ÖZET:}
 \newcommand\absengname{ABSTRACT:}
-\newenvironment{ozet}{
-	{\bfseries \abstrname \vspace{1.0ex \@plus .2ex}\vspace{\z@}}}
+\newenvironment{ozet}
+	{{\bfseries \abstrname} \par \vspace{1.0ex \@plus .2ex}\vspace{\z@}}
+
 
 \renewenvironment{abstract}{\vspace{2.0ex \@plus .2ex}
-	{\bfseries \absengname \vspace{1.0ex \@plus .2ex}\vspace{\z@}}}
+	{{\bfseries \absengname} \par \vspace{1.0ex \@plus .2ex}\vspace{\z@}}}
+
+\newenvironment{keywords}{{\bfseries KEYWORDS:} }{\vspace{1em}}
+\newenvironment{anahtarkelimeler}{{\bfseries ANAHTAR KELİMELER:} }{\vspace{1em}}
 
 
 %%% Section Header Settings
@@ -120,3 +129,18 @@ footskip=10mm]{geometry}
 %\setlength{\textwidth}{170mm}
 %\setlength{\textheight}{22cm}
 %\setcounter{secnumdepth}{0}
+
+
+%%%Figures and Tables
+\setlength\abovecaptionskip{10\p@}
+\setlength\belowcaptionskip{0\p@}
+\long\def\@makecaption#1#2{%
+	\vskip\abovecaptionskip
+	\sbox\@tempboxa{{\bfseries #1.} #2}%
+	\ifdim \wd\@tempboxa >\hsize
+	{\bfseries #1.} #2\par
+	\else
+	\global \@minipagefalse
+	\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+	\fi
+	\vskip\belowcaptionskip}

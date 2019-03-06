@@ -1,16 +1,16 @@
-\documentclass[english]{eqconf}
+\documentclass[turkish]{eqconf}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 %\usepackage{showframe}
 \usepackage{babel}
-
 \usepackage{blindtext}
- 
-\title{BİLDİRİ BAŞLIĞI\vspace{2pt}}
-\author{\textbf{%
+
+
+\title{BİLDİRİ BAŞLIĞI}
+\author{%
 		Mücahit Bekin\textsuperscript{1} ve
-		Barış Erkuş\textsuperscript{2}\vspace{1pt}%
-}}
+		Barış Erkuş\textsuperscript{2}%
+}
 
 \date{\small%
 \textsuperscript{\textbf{1}}
@@ -23,31 +23,37 @@ Büyükkent}\\
 
  
 \begin{document}
- 
+
+%%% Keep thes lines
+\fixturkishbug
 \maketitle
-
 \thispagestyle{firststyle}
+%%%%%%%
+
  
-\begin{ozet}   %%% A Turkish Abstract has to be provided if the paper is in Turkish
-	
+%%% A Turkish Abstract has to be provided if the paper is in Turkish
+\begin{ozet}
 \blindtext
-
-\textbf{ANAHTAR KELİMELER:} Anahtar Kelime
-
 \end{ozet}
 
-\begin{abstract} %%% All papers (both Turkish and English) have to provide English abstract
-	
-	\blindtext
-	
-\textbf{KEYWORDS:} Anahtar Kelime
-	
+\begin{anahtarkelimeler}
+anahtar kelime1, anahtar kelime2, anahtar kelime3.
+\end{anahtarkelimeler}
+
+
+%%% All papers (both Turkish and English) have to provide English abstract
+\begin{abstract} 
+\blindtext
 \end{abstract}
 
-\vspace{1em}
+\begin{keywords}
+keyword1, keyword2, keyword3.
+\end{keywords}
+
+
+
  
 \section{INTRODUCTION}
- 
 The Monty Hall problem...
 $x=\frac{a}{b}$
  
@@ -68,6 +74,43 @@ $x=\frac{a}{b}$
 \blindtext
 
 \blindtext
+
+\blindtext
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.4]{b.PNG}
+		\caption{A boat.}
+		\label{fig:boat1}
+\end{center}
+\end{figure}
+
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext \blindtext \blindtext \blindtext
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Your first table.}
+		\label{tab:table1}
+		\begin{tabular}{l|c|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+			\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+			$\alpha$ & $\beta$ & $\gamma$ \\
+			\hline
+			1 & 1110.1 & a\\
+			2 & 10.1 & b\\
+			3 & 23.113231 & c\\
+		\end{tabular}
+	\end{center}
+\end{table}
 
 \blindtext
 
