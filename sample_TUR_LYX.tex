@@ -45,12 +45,15 @@
 \usepackage{etoolbox}
 \AtEndPreamble{%
 	\DefineBibliographyStrings{english}{%
-		references = {{KAYNAKLAR}},
+		references = {KAYNAKLAR},
 		and = {ve},
 		andothers = {vd.},
-		pages = {s.},}
+		pages = {s.},
+		mathesis = {Yüksek Lisans Tezi},
+		phdthesis = {Doktora Tezi},
+		techreport = {Teknik Rapor},}
 		\renewbibmacro{in:}{}
-		\usepackage{csquotes}
+		\usepackage[style=english]{csquotes}
 }
 	
 \makeatother
@@ -61,6 +64,21 @@
 \usepackage[style=authoryear,maxcitenames=2,
 doi=false,isbn=false,url=false,
 eprint=false,giveninits]{biblatex}
+\DeclareNameAlias{sortname}{family-given}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
+\DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+
+\renewbibmacro*{volume+number+eid}{%
+	\printfield{volume}%
+	%  \setunit*{\adddot}% DELETED
+	\setunit*{\addnbthinspace}% \addnbthinspace or \addnbspace
+	\printfield{number}%
+	\setunit{\addcomma\space}%
+	\printfield{eid}}
+
 \addbibresource{examplebib.bib}
 
 

@@ -1,0 +1,115 @@
+#% Do not delete the line below; configure depends on this      
+#  \DeclareLaTeXClass[eqconf, article]{Earthquake Engineering Conference}
+#  \DeclareCategory{Articles}
+
+Format 66
+Input stdclass.inc
+Input numarticle.inc
+
+# Input general definitions
+Input article.layout
+
+Style OzetEQ
+	Margin                Static
+	Category              FrontMatter
+	LabelString           "ÖZET:"
+	LabelType             Above
+	LatexType             Environment
+	LatexName             ozet
+	NeedProtect           0
+	NextNoIndent          0
+	ToggleIndent          Never
+	ParSkip               0.5
+	TopSep                0.25
+	BottomSep             0.5
+	ParSep                0.5
+	Align                 Block
+	LabelFont
+	  Series              Bold
+	  Size                large
+	  Color               blue
+	EndFont
+	HTMLTag               h1
+End
+
+Style AbstractEQ
+	Margin                Static
+	Category              FrontMatter
+	LabelString           "ABSTRACT:"
+	LabelType             Above
+	LatexType             Environment
+	LatexName             abstract
+	NeedProtect           0
+	NextNoIndent          0
+	ToggleIndent          Never
+	ParSkip               0.5
+	TopSep                0.25
+	BottomSep             0.5
+	ParSep                0.5
+	Align                 Block
+	LabelFont
+	  Series              Bold
+	  Size                large
+	  Color               blue
+	EndFont
+	HTMLTag               h1
+End
+
+Style KeywordsEQ
+	Margin                Dynamic
+	Category              FrontMatter
+	LabelString           "KEYWORDS: "
+	LabelType             Static
+	LatexType             Environment
+	LatexName             keywords
+	NeedProtect           0
+	NextNoIndent          0
+	ToggleIndent          Never
+	ParSkip               0.5
+	TopSep                0.25
+	BottomSep             1
+	ParSep                0.5
+	Align                 Block
+	LabelFont
+	  Series              Bold
+	  Size                normalsize
+	  Color               green
+	EndFont
+End
+
+Style AnahtarKlmEQ
+	Margin                Dynamic
+	Category              FrontMatter
+	LabelString           "ANAHTAR KELİMELER: "
+	LabelType             Static
+	LatexType             Environment
+	LatexName             anahtarkelimeler
+	NeedProtect           0
+	NextNoIndent          0
+	ToggleIndent          Never
+	ParSkip               0.5
+	TopSep                0.25
+	BottomSep             1
+	ParSep                0.5
+	Align                 Block
+	LabelFont
+	  Series              Bold
+	  Size                normalsize
+	  Color               green
+	EndFont
+End
+
+InsetLayout Flex:AuthorName
+	LyXType               Custom
+	LabelString           "AuthorName"
+	LatexType             Command
+	LatexName             authorname
+	Argument 1
+	  Mandatory 1
+	  LabelString "Number"
+	EndArgument
+	Argument 2
+      Mandatory 1
+      LabelString "Name-Surname"
+	EndArgument
+End
