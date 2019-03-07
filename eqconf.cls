@@ -75,8 +75,10 @@ footskip=10mm]{geometry}
 
 \def\fixturkishbug{%
 	\if@TurLang
-	\shorthandoff{=}
+		\shorthandoff{=}
 	\fi}
+
+
 
 
 %%% Abstract Settings

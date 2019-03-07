@@ -1,5 +1,5 @@
 #% Do not delete the line below; configure depends on this      
-#  \DeclareLaTeXClass[eqconf, article]{Earthquake Engineering Conference}
+#  \DeclareLaTeXClass[eqconf]{Earthquake Engineering Conference}
 #  \DeclareCategory{Articles}
 
 Format 66
@@ -8,6 +8,173 @@ Input numarticle.inc
 
 # Input general definitions
 Input article.layout
+
+AddToPreamble
+\usepackage{etoolbox}
+\usepackage[style=english]{csquotes}
+%%% Optional Math Operation: Makes bold greek letters more bold
+\usepackage{upgreek}   %Needed for Matrix Greek Letters
+\usepackage{pdfrender} %Needed for Matrix Greek Letters
+\newcommand*{\boldgreek}[1]{%
+	\textpdfrender{%
+		TextRenderingMode=FillStroke,%
+		LineWidth=.35pt,%
+	}{#1}%
+}
+
+%%% Türkçe Tanımlamalar
+\AtEndPreamble{%
+\DefineBibliographyStrings{english}{%
+	references = {KAYNAKLAR},
+	and = {ve},
+	andothers = {vd.},
+	pages = {s.},
+	mathesis = {Yüksek Lisans Tezi},
+	phdthesis = {Doktora Tezi},
+	techreport = {Teknik Rapor},}
+\renewbibmacro{in:}{}
+\DeclareNameAlias{sortname}{family-given}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
+\DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+
+\renewbibmacro*{volume+number+eid}{%
+	\printfield{volume}%
+	%  \setunit*{\adddot}% DELETED
+	\setunit*{\addnbthinspace}% \addnbthinspace or \addnbspace
+	\printfield{number}%
+	\setunit{\addcomma\space}%
+	\printfield{eid}}
+}
+EndPreamble
+
+
+NoStyle Part
+NoStyle Subsubsection
+NoStyle Part*
+NoStyle Section*
+NoStyle Subsection*
+
+
+Style Section
+	Font
+	  Size                Large
+	EndFont
+End
+
+Style Subsection
+	Font
+	  Shape               Italic
+	EndFont
+End
+
+Style Subsubsection*
+	Font
+	  Size                Large
+	  Shape               Italic
+	EndFont
+End
+
+
+
+Style TitleEQ
+	Margin                Static
+	LatexType             Command
+	Category              FrontMatter
+	InTitle               1
+	LatexName             title
+	ParSkip               0.4
+	ItemSep               0
+	TopSep                0
+	BottomSep             0.5
+	ParSep                1
+	Align                 Center
+	LabelType             No_Label
+	Font
+	  Size                Larger
+	  Series              Bold
+	EndFont
+	HTMLTag               h1
+	HTMLTitle             true
+End
+
+InsetLayout Flex:AuthorNameEQ
+	LyXType               Custom
+	LabelString           "AuthorName"
+	LatexType             Command
+	LatexName             authorname
+	MultiPar              0
+	Argument 1
+	  Mandatory 1
+	  LabelString "Number"
+	  Font
+	    Size                normal
+	    Series              Bold
+	  EndFont
+	EndArgument
+	Argument 2
+      Mandatory 1
+      LabelString "Name-Surname"
+	  Font
+	    Size                normal
+	    Series              Bold
+	  EndFont
+	EndArgument
+	InTitle               1
+End
+
+InsetLayout Flex:AffiliationEQ
+	LyXType               Custom
+	LabelString           "Affiliation"
+	LatexType             Command
+	LatexName             affils
+	MultiPar              0
+	Argument 1
+	  Mandatory 1
+	  LabelString "Number"
+	  Font
+	    Size                normal
+	    Series              Bold
+	  EndFont
+	EndArgument
+	Argument 2
+      Mandatory 1
+      LabelString "Affiliation"
+	  Font
+	    Size                normal
+	    Shape               Italic
+	  EndFont
+	EndArgument
+	InTitle               1
+End
+
+InsetLayout Flex:EmailEQ
+	LyXType               Custom
+	LabelString           "E-mail"
+	LatexType             Command
+	LatexName             email
+	MultiPar              0
+	InTitle               1
+	Font
+	  Size                normal
+	  Shape               Italic
+	EndFont
+	Argument 1
+      Mandatory 1
+      LabelString "Email: "
+	  Font
+	    Size                normal
+	    Shape               Italic
+	  EndFont
+	  LabelFont
+	    Size                normal
+	    Shape               Italic
+	  EndFont  
+	EndArgument
+End
+
 
 Style OzetEQ
 	Margin                Static
@@ -72,7 +239,7 @@ Style KeywordsEQ
 	Align                 Block
 	LabelFont
 	  Series              Bold
-	  Size                normalsize
+	  Size                normal
 	  Color               green
 	EndFont
 End
@@ -94,22 +261,63 @@ Style AnahtarKlmEQ
 	Align                 Block
 	LabelFont
 	  Series              Bold
-	  Size                normalsize
+	  Size                normal  
 	  Color               green
 	EndFont
 End
 
-InsetLayout Flex:AuthorName
-	LyXType               Custom
-	LabelString           "AuthorName"
+
+Style Author
+	Margin                Static
 	LatexType             Command
-	LatexName             authorname
-	Argument 1
-	  Mandatory 1
-	  LabelString "Number"
-	EndArgument
-	Argument 2
-      Mandatory 1
-      LabelString "Name-Surname"
-	EndArgument
+	Category              FrontMatter
+	InTitle               1
+	LatexName             author
+	LabelSep              xxx
+	ParSkip               0.4
+	TopSep                0.5
+	BottomSep             0.5
+	ParSep                1.0
+	Align                 Center
+	LabelType             No_Label
+	Font
+	  Size                normal
+	EndFont
 End
+
+
+Style Date
+	Margin                Dynamic
+	LatexType             Command
+	Category              FrontMatter
+	InTitle               1
+	LatexName             date
+	LabelSep              xxx
+	ParSkip               0.4
+	TopSep                0.5
+	BottomSep             0.5
+	ParSep                1
+	Align                 Center
+	LabelType             No_Label
+	Font
+	  Size                normal
+	EndFont
+End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

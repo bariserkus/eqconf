@@ -1,0 +1,19 @@
+@Article{AtikAbrahamson2010,
+  author  = {Linda Al Atik and Norman Abrahamson},
+  title   = {An Improved Method for Nonstationary Spectral Matching},
+  journal = {Earthquake Spectra},
+  year    = {2010},
+  volume  = {26},
+  number  = {3},
+  pages   = {601-617},
+  doi     = {10.1193/1.3459159},
+  url     = {https://doi.org/10.1193/1.3459159},
+}
+
+@Misc{Bechtold1907,
+  author = {Jacob Bechtold},
+  title  = {Earthquake-Proof Building},
+  year   = {1907},
+  note   = {United States Patent Office 845,046},
+  url    = {https://patents.google.com/patent/US845046A/},
+}

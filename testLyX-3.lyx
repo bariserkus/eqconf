@@ -4,12 +4,15 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass eqconf
+\textclass article
+\begin_preamble
+\usepackage{etoolbox}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language turkish
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -43,9 +46,11 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine biblatex
+\cite_engine_type authoryear
 \biblio_style plain
+\biblatex_bibstyle authoryear
+\biblatex_citestyle authoryear
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -78,62 +83,14 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset Flex AuthorName
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-1
-\end_layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "testbib"
+options "plain"
 
 \end_inset
 
-
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Barış Erkuş
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout OzetEQ
-Test 1 2
-\end_layout
-
-\begin_layout AnahtarKlmEQ
-Keyword1, keyword2
-\end_layout
-
-\begin_layout AbstractEQ
-Test 1 2 
-\end_layout
-
-\begin_layout KeywordsEQ
-Keyword1, Keyword2
-\end_layout
-
-\begin_layout Section
-Giriş
-\end_layout
-
-\begin_layout Standard
-asdfas
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
