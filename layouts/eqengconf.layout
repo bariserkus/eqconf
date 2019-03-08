@@ -1,5 +1,5 @@
 #% Do not delete the line below; configure depends on this      
-#  \DeclareLaTeXClass[eqconf]{Earthquake Engineering Conference}
+#  \DeclareLaTeXClass[eqengconf]{Earthquake Engineering Conference}
 #  \DeclareCategory{Articles}
 
 Format 66
@@ -21,33 +21,6 @@ AddToPreamble
 		LineWidth=.35pt,%
 	}{#1}%
 }
-
-%%% Türkçe Tanımlamalar
-\AtEndPreamble{%
-\DefineBibliographyStrings{english}{%
-	references = {KAYNAKLAR},
-	and = {ve},
-	andothers = {vd.},
-	pages = {s.},
-	mathesis = {Yüksek Lisans Tezi},
-	phdthesis = {Doktora Tezi},
-	techreport = {Teknik Rapor},}
-\renewbibmacro{in:}{}
-\DeclareNameAlias{sortname}{family-given}
-\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
-\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
-\DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
-\DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
-\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
-
-\renewbibmacro*{volume+number+eid}{%
-	\printfield{volume}%
-	%  \setunit*{\adddot}% DELETED
-	\setunit*{\addnbthinspace}% \addnbthinspace or \addnbspace
-	\printfield{number}%
-	\setunit{\addcomma\space}%
-	\printfield{eid}}
-}
 EndPreamble
 
 
@@ -56,6 +29,7 @@ NoStyle Subsubsection
 NoStyle Part*
 NoStyle Section*
 NoStyle Subsection*
+NoStyle Abstract
 
 
 Style Section
@@ -182,7 +156,7 @@ Style OzetEQ
 	LabelString           "ÖZET:"
 	LabelType             Above
 	LatexType             Environment
-	LatexName             ozet
+	LatexName             ozeteq
 	NeedProtect           0
 	NextNoIndent          0
 	ToggleIndent          Never
@@ -202,11 +176,11 @@ End
 Style AbstractEQ
 	Margin                Static
 	Category              FrontMatter
-	LabelString           "ABSTRACT:"
+	LabelString           "ABSTRACT: "
 	LabelType             Above
 	LatexType             Environment
-	LatexName             abstract
-	NeedProtect           0
+	LatexName             abstracteq
+	NeedProtect           1
 	NextNoIndent          0
 	ToggleIndent          Never
 	ParSkip               0.5

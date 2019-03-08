@@ -1,64 +1,55 @@
-#LyX file created by tex2lyx 2.3
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin E:/localtexmf/tex/latex/eqconf/
-\textclass eqconf
+\origin unavailable
+\textclass eqengconf
 \begin_preamble
-%%%% PDF Font kodlaması için
-%%%% Editör font kodlaması için
-%\usepackage{showframe}
-\usepackage{blindtext}%%% \blindtext komutu için kullanılıyor. Makale bitiminde kaldırılabilir.
-%%% Şekillerin etrafın metini sarmak için kullanılıyor. Yoksa kaldırılabilir.
+\usepackage{blindtext}
 
+%%% BibLaTeX Settings
+\AtEndPreamble{%
 
-%%% Optional Math Operation: Makes bold greek letters more bold
-\usepackage{upgreek}%Needed for Matrix Greek Letters
-\usepackage{pdfrender}%Needed for Matrix Greek Letters
-\newcommand*{\boldgreek}[1]{%
-	\textpdfrender{%
-		TextRenderingMode=FillStroke,%
-		LineWidth=.35pt,%
-	}{#1}%
-}
-
-\title{BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI\\
-	BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI}
-\author{\authorname{1}{Ahmet Yılmaz},
-		\authorname{1}{Mustafa Mehmet Kaya} ve
-		\authorname{2}{John Doe}}
-
-\date{	\affils{1}{Araş. Gör., İnşaat Müh. Bölümü, Abece Üniversitesi, Güzelkent}\\
-	\affils{2}{Prof. Dr., Jeofizik Müh. Bölümü, Abece Teknik Üniversitesi, Büyükkent}\\
-	\email{gönderenyazar@kurum.edu.tr}%%% Sadece gönderen yazarın e-postası girilecektir.
-}
-
-%%% Turkish Support
-
-
-%%% BibLatex
-\usepackage{babel}
-\usepackage{xkeyval}
-\usepackage{etoolbox}
-\usepackage{csquotes}
+%%%%% TURKISH NOTATION FOR BIBLATEX. TURN OFF FOR ENGLISH %%%%%
 \DefineBibliographyStrings{english}{%
-	references = {{KAYNAKLAR}},
+	references = {KAYNAKLAR},
 	and = {ve},
 	andothers = {vd.},
 	pages = {s.},
-}
+	mathesis = {Yüksek Lisans Tezi},
+	phdthesis = {Doktora Tezi},
+	techreport = {Teknik Rapor},}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% ENGLISH NOTATION FOR BIBLATEX. TURN OFF FOR TURKISH %%%%%
+%\DefineBibliographyStrings{english}{%
+%	mathesis = {M.S. Thesis},}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \renewbibmacro{in:}{}
+\DeclareNameAlias{sortname}{family-given}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
+\DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
 
-
-
+\renewbibmacro*{volume+number+eid}{%
+	\printfield{volume}%
+	%  \setunit*{\adddot}% DELETED
+	\setunit*{\addnbthinspace}% \addnbthinspace or \addnbspace
+	\printfield{number}%
+	\setunit{\addcomma\space}%
+	\printfield{eid}}
+}
 \end_preamble
-\use_default_options false
+\use_default_options true
 \maintain_unincluded_children false
 \language turkish
 \language_package default
 \inputencoding utf8
-\fontencoding T1
+\fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -81,28 +72,28 @@
 \use_hyperref false
 \papersize default
 \use_geometry false
-\use_package amsmath 2
-\use_package amssymb 0
-\use_package cancel 0
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
 \use_package esint 1
-\use_package mathdots 0
-\use_package mathtools 0
-\use_package mhchem 0
-\use_package stackrel 0
-\use_package stmaryrd 0
-\use_package undertilde 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine biblatex
 \cite_engine_type authoryear
-\biblio_style plainnat
-\use_bibtopic false
-\biblio_options maxcitenames=2,doi=false,isbn=false,url=false,eprint=false,giveninits
+\biblio_style plain
+\biblio_options style=authoryear,maxcitenames=2,maxbibnames=10, doi=false,isbn=false,url=false,eprint=false,giveninits
 \biblatex_bibstyle authoryear
 \biblatex_citestyle authoryear
+\use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 0
+\use_refstyle 1
 \use_minted 0
 \index Index
 \shortcut idx
@@ -128,81 +119,30 @@
 
 \begin_body
 
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-%%%%%% Keep thes lines %%%%%
+\begin_layout TitleEQ
+BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
+\begin_layout Author
+\begin_inset Flex AuthorNameEQ
+status open
 
 \begin_layout Plain Layout
-
-\backslash
-fixturkishbug
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
+\begin_inset Argument 1
+status open
 
 \begin_layout Plain Layout
-%% For the Turkish-
-\backslash
-includegraphics bug
-\end_layout
-
-\begin_layout Plain Layout
-
+1
 \end_layout
 
 \end_inset
 
 
-\begin_inset ERT
-status collapsed
+\begin_inset Argument 2
+status open
 
 \begin_layout Plain Layout
-
-\backslash
-maketitle
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-thispagestyle{firststyle}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-%%%%%%%
+Ahmet Yılmaz
 \end_layout
 
 \end_inset
@@ -210,55 +150,28 @@ status collapsed
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
 
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-%%% A Turkish Abstract has to be provided if the paper is in Turkish
-\end_layout
+, 
+\begin_inset Flex AuthorNameEQ
+status open
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status open
 
+\begin_layout Plain Layout
+1
 \end_layout
 
 \end_inset
 
 
-\begin_inset ERT
-status collapsed
+\begin_inset Argument 2
+status open
 
 \begin_layout Plain Layout
-
-\backslash
-begin{ozet}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-end{ozet}
+Mehmet Kaya
 \end_layout
 
 \end_inset
@@ -266,48 +179,32 @@ end{ozet}
 
 \end_layout
 
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-begin{anahtarkelimeler}
-\end_layout
-
 \end_inset
 
- anahtar kelime1, anahtar kelime2, anahtar kelime3. 
-\begin_inset ERT
-status collapsed
+ ve 
+\begin_inset Flex AuthorNameEQ
+status open
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status open
 
-\backslash
-end{anahtarkelimeler}
+\begin_layout Plain Layout
+2
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
+\begin_inset Argument 2
+status open
 
 \begin_layout Plain Layout
-%%% All papers (both Turkish and English) have to provide English abstract
+John Doe
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -316,14 +213,104 @@ status collapsed
 
 \end_layout
 
-\begin_layout Abstract
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
+\begin_layout Date
+\begin_inset Flex AffiliationEQ
+status open
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Araş.
+ Gör., İnşaat Müh.
+ Bölümü, Abece Üniversitesi, Güzelkent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex AffiliationEQ
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Prof.
+ Dr., Jeofizik Müh.
+ Bölümü, Abece Teknik Üniversitesi, Büyükkent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex EmailEQ
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+bariserkus@itu.edu.tr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout OzetEQ
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -334,29 +321,54 @@ blindtext
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout AnahtarKlmEQ
+anahtar kelime1, anahtar kelime2, anahtar kelime3.
+\end_layout
 
-\lang turkish
-
+\begin_layout AbstractEQ
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
+
 \backslash
-begin{keywords}
+blindtext
 \end_layout
 
 \end_inset
 
- keyword1, keyword2, keyword3. 
+
+\end_layout
+
+\begin_layout KeywordsEQ
+keyword1, keyword2, keyword3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
 
+
 \backslash
-end{keywords}
+thispagestyle{firststyle}  % Do not remove
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fixturkishbug   % Do not remove
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -365,19 +377,15 @@ end{keywords}
 \end_layout
 
 \begin_layout Section
-
-\lang turkish
 GİRİŞ BÖLÜMÜ
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -385,23 +393,23 @@ blindtext
 
 \end_inset
 
- 
-\begin_inset Formula \begin{equation}\label{eq:massdef}    %Denklemden önce boşluk bırakılmamalı
-x=\dfrac{a}{b}, \quad \boldgreek{\alpha}=\boldgreek{\upphi}
+
+\begin_inset Formula 
+\begin{equation}
+x=\dfrac{a}{b},\quad\boldgreek{\alpha}=\boldgreek{\upphi}\label{eq:massdef}
 \end{equation}
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -413,13 +421,10 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-Görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır (
+Görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
+ Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır (
 \begin_inset CommandInset citation
 LatexCommand cite
-after ""
-before ""
 key "Skinner1993"
 literal "false"
 
@@ -429,19 +434,15 @@ literal "false"
 \end_layout
 
 \begin_layout Section
-
-\lang turkish
 TEORİ BÖLÜMÜ
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -453,19 +454,15 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-
-\lang turkish
 Denklemler
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -474,17 +471,17 @@ blindtext
 \end_inset
 
  
-\begin_inset Formula \begin{equation}\label{eq:energy} %Denklemden önce boşluk bırakılmamalı
-g(x)=\int_a^b f(x)dx, \quad x=\dfrac{a}{b}, \quad \boldgreek{\alpha}=\boldgreek{\upphi}
+\begin_inset Formula 
+\begin{equation}
+g(x)=\int_{a}^{b}f(x)dx,\quad x=\dfrac{a}{b},\quad\boldgreek{\alpha}=\boldgreek{\upphi}\label{eq:energy}
 \end{equation}
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
 Denklem (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -495,11 +492,11 @@ noprefix "false"
 
 \end_inset
 
-)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır. 
+)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
+ Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
-after ""
-before ""
 key "Narasimhan2006,Erkus2006"
 literal "false"
 
@@ -509,13 +506,11 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -527,106 +522,34 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-
-\lang turkish
 Diğer Bilgiler
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-Şekil (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:structure"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-
 \begin_inset Wrap figure
 lines 0
 placement r
 overhang 0col%
-width 40text%
+width "40text%"
 status open
 
-
-\begin_layout Standard
-
-\lang turkish
- 
-\begin_inset VSpace -12pt
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
-
-\backslash
-centering
-\end_layout
-
+\align center
+\begin_inset VSpace -10pt
 \end_inset
 
  
-\begin_inset Graphics 
-	filename b.PNG
+\begin_inset Graphics
+	filename b.png
+	lyxscale 50
 	scale 20
 
 \end_inset
 
- 
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:structure"
@@ -642,22 +565,17 @@ Bir bina yapısı.
 \begin_inset VSpace -10pt
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -669,8 +587,53 @@ blindtext
 \end_layout
 
 \begin_layout Standard
+Şekil (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:structure"
+plural "false"
+caps "false"
+noprefix "false"
 
-\lang turkish
+\end_inset
+
+)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
+ Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Şekil (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -681,46 +644,29 @@ noprefix "false"
 
 \end_inset
 
-)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
+ Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
-
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Graphics 
-	filename b.PNG
+\align center
+\begin_inset Graphics
+	filename b.png
+	lyxscale 50
 	scale 40
 
 \end_inset
 
- 
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:otherstruct"
@@ -741,13 +687,11 @@ Diğer bina.
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -756,17 +700,18 @@ blindtext
 \end_inset
 
  
-\begin_inset Formula \begin{equation}\label{eq:stiffness} %Denklemden önce boşluk bırakılmamalı
-g(x)=\int_a^b f(x)dx, \quad x=\dfrac{a}{b}, \quad \boldgreek{\alpha}=\boldgreek{\upphi}
+\begin_inset Formula 
+\begin{equation}
+%Denklemdenönceboşlukbırakılmamalı
+g(x)=\int_{a}^{b}f(x)dx,\quad x=\dfrac{a}{b},\quad\boldgreek{\alpha}=\boldgreek{\upphi}\label{eq:stiffness}
 \end{equation}
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
 Denklem (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -777,17 +722,16 @@ noprefix "false"
 
 \end_inset
 
-)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
+ Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -799,19 +743,15 @@ blindtext
 \end_layout
 
 \begin_layout Subsubsection*
-
-\lang turkish
 Alt Alt Başlık
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -823,13 +763,11 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -841,19 +779,15 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-
-\lang turkish
 Başka Diğer Bilgiler
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -865,13 +799,11 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -883,39 +815,18 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-%	
-\backslash
-vspace{-5pt}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \begin_inset Float table
 wide false
 sideways false
-status open
-
-
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
 
 \backslash
 setlength{
@@ -923,13 +834,8 @@ setlength{
 abovecaptionskip}{-5pt}
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
+
 
 \backslash
 setlength{
@@ -939,23 +845,10 @@ belowcaptionskip}{10pt}
 
 \end_inset
 
- 
-\begin_inset ERT
-status collapsed
 
-\begin_layout Plain Layout
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:onemlibilgi"
@@ -968,9 +861,9 @@ name "tab:onemlibilgi"
 \end_inset
 
 
-\begin_inset Tabular 
+\begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
-<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="right" valignment="top">
@@ -978,28 +871,10 @@ name "tab:onemlibilgi"
 <cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
-% <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
 
 \series bold
 Value 1
-\series default
- 
 \end_layout
 
 \end_inset
@@ -1007,14 +882,10 @@ Value 1
 <cell alignment="center" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 
 \series bold
 Value 2
-\series default
- 
 \end_layout
 
 \end_inset
@@ -1022,14 +893,10 @@ Value 2
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 
 \series bold
 Value 3
-\series default
-
 \end_layout
 
 \end_inset
@@ -1039,14 +906,11 @@ Value 3
 <cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-
+\begin_layout Plain Layout
 \begin_inset Formula $\alpha$
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
@@ -1054,14 +918,11 @@ Value 3
 <cell alignment="center" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-
+\begin_layout Plain Layout
 \begin_inset Formula $\beta$
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
@@ -1069,14 +930,11 @@ Value 3
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-
+\begin_layout Plain Layout
 \begin_inset Formula $\gamma$
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
@@ -1086,10 +944,8 @@ Value 3
 <cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-1 
+\begin_layout Plain Layout
+1
 \end_layout
 
 \end_inset
@@ -1097,10 +953,8 @@ Value 3
 <cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-1110.1 
+\begin_layout Plain Layout
+1110.1
 \end_layout
 
 \end_inset
@@ -1108,9 +962,7 @@ Value 3
 <cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 a
 \end_layout
 
@@ -1121,10 +973,8 @@ a
 <cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-2 
+\begin_layout Plain Layout
+2
 \end_layout
 
 \end_inset
@@ -1132,10 +982,8 @@ a
 <cell alignment="center" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-10.1 
+\begin_layout Plain Layout
+10.1
 \end_layout
 
 \end_inset
@@ -1143,9 +991,7 @@ a
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 b
 \end_layout
 
@@ -1156,10 +1002,8 @@ b
 <cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-3 
+\begin_layout Plain Layout
+3
 \end_layout
 
 \end_inset
@@ -1167,10 +1011,8 @@ b
 <cell alignment="center" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-23.113231 
+\begin_layout Plain Layout
+23.113231
 \end_layout
 
 \end_inset
@@ -1178,9 +1020,7 @@ b
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 c
 \end_layout
 
@@ -1200,8 +1040,6 @@ c
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
 Tablo (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1212,17 +1050,16 @@ noprefix "false"
 
 \end_inset
 
-)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
+ Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -1234,13 +1071,11 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -1252,19 +1087,15 @@ blindtext
 \end_layout
 
 \begin_layout Section
-
-\lang turkish
 YENİ BÖLÜM
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -1276,13 +1107,11 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -1294,19 +1123,15 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-
-\lang turkish
 Başka Diğer Bilgiler
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -1318,19 +1143,15 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-
-\lang turkish
 Başka Başka Diğer Bilgiler
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -1342,25 +1163,107 @@ blindtext
 \end_layout
 
 \begin_layout Standard
+Tablo (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:baskasonuc"
+plural "false"
+caps "false"
+noprefix "false"
 
-\lang turkish
+\end_inset
 
-\begin_inset Wrap table
-lines 0
-placement l
-overhang 0col%
-width 6cm
-status open
-
+)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
+ Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+\end_layout
 
 \begin_layout Standard
-
-\lang turkish
- 
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Alt Alt Başlık
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Başka Diğer Bilgiler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap table
+lines 0
+placement l
+overhang 0col%
+width "6cm"
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
 
 \backslash
 setlength{
@@ -1368,13 +1271,8 @@ setlength{
 abovecaptionskip}{0pt}
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
+
 
 \backslash
 setlength{
@@ -1384,27 +1282,14 @@ belowcaptionskip}{15pt}
 
 \end_inset
 
- 
+
 \begin_inset VSpace -10pt
 \end_inset
 
- 
-\begin_inset ERT
-status collapsed
 
-\begin_layout Plain Layout
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:baskasonuc"
@@ -1417,9 +1302,9 @@ Başka sonuçlar.
 \end_inset
 
 
-\begin_inset Tabular 
+\begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
-<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="right" valignment="top">
@@ -1427,28 +1312,10 @@ Başka sonuçlar.
 <cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
-% <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
 
 \series bold
 Value 1
-\series default
- 
 \end_layout
 
 \end_inset
@@ -1456,14 +1323,10 @@ Value 1
 <cell alignment="center" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 
 \series bold
 Value 2
-\series default
- 
 \end_layout
 
 \end_inset
@@ -1471,14 +1334,10 @@ Value 2
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 
 \series bold
 Value 3
-\series default
-
 \end_layout
 
 \end_inset
@@ -1488,14 +1347,11 @@ Value 3
 <cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-
+\begin_layout Plain Layout
 \begin_inset Formula $\alpha$
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
@@ -1503,14 +1359,11 @@ Value 3
 <cell alignment="center" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-
+\begin_layout Plain Layout
 \begin_inset Formula $\beta$
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
@@ -1518,14 +1371,11 @@ Value 3
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-
+\begin_layout Plain Layout
 \begin_inset Formula $\gamma$
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
@@ -1535,10 +1385,8 @@ Value 3
 <cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-1 
+\begin_layout Plain Layout
+1
 \end_layout
 
 \end_inset
@@ -1546,10 +1394,8 @@ Value 3
 <cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-1110.1 
+\begin_layout Plain Layout
+1110.1
 \end_layout
 
 \end_inset
@@ -1557,9 +1403,7 @@ Value 3
 <cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 a
 \end_layout
 
@@ -1570,10 +1414,8 @@ a
 <cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-2 
+\begin_layout Plain Layout
+2
 \end_layout
 
 \end_inset
@@ -1581,10 +1423,8 @@ a
 <cell alignment="center" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-10.1 
+\begin_layout Plain Layout
+10.1
 \end_layout
 
 \end_inset
@@ -1592,9 +1432,7 @@ a
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 b
 \end_layout
 
@@ -1605,10 +1443,8 @@ b
 <cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-3 
+\begin_layout Plain Layout
+3
 \end_layout
 
 \end_inset
@@ -1616,10 +1452,8 @@ b
 <cell alignment="center" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
-23.113231 
+\begin_layout Plain Layout
+23.113231
 \end_layout
 
 \end_inset
@@ -1627,9 +1461,7 @@ b
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-
-\lang turkish
+\begin_layout Plain Layout
 c
 \end_layout
 
@@ -1644,62 +1476,17 @@ c
 \begin_inset VSpace -10pt
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-Tablo (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:baskasonuc"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
 
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
 
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-
-\lang turkish
-Alt Alt Başlık
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
 
 \backslash
 blindtext
@@ -1711,103 +1498,25 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-
-\lang turkish
-Başka Diğer Bilgiler
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang turkish
-
 \begin_inset Float figure
 placement h
 wide false
 sideways false
 status open
 
-
-\begin_layout Standard
-
-\lang turkish
-
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Graphics 
-	filename b.PNG
+\align center
+\begin_inset Graphics
+	filename b.png
+	lyxscale 50
 	scale 40
 
 \end_inset
 
- 
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:ikinciyapi"
@@ -1828,8 +1537,6 @@ name "fig:ikinciyapi"
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
 Şekil (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1840,17 +1547,25 @@ noprefix "false"
 
 \end_inset
 
-)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
+ Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bekin2018-MSThesis"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -1862,19 +1577,15 @@ blindtext
 \end_layout
 
 \begin_layout Section
-
-\lang turkish
 SONUÇ
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -1886,13 +1597,11 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 blindtext
@@ -1904,13 +1613,10 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-
-\lang turkish
-
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "examplebib"
-options ""
 
 \end_inset
 

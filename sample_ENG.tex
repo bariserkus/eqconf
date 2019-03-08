@@ -1,4 +1,4 @@
-\documentclass[turkish]{eqengconf}
+\documentclass[english]{eqengconf}
 \usepackage[T1]{fontenc}   %%%% PDF Font kodlaması için
 \usepackage[utf8]{inputenc}   %%%% Editör font kodlaması için
 %\usepackage{showframe}
@@ -28,8 +28,6 @@
 	\email{gönderenyazar@kurum.edu.tr}%%% Sadece gönderen yazarın e-postası girilecektir.
 }
 
-%%% Turkish Support
-
 
 %%% BibLatex
 \usepackage[]{babel}
@@ -40,19 +38,19 @@ doi=false,isbn=false,url=false,eprint=false,giveninits]{biblatex}
 \usepackage[style=english]{csquotes}
 
 %%%%% TURKISH NOTATION FOR BIBLATEX. TURN OFF FOR ENGLISH %%%%%
-\DefineBibliographyStrings{english}{%
-	references = {KAYNAKLAR},
-	and = {ve},
-	andothers = {vd.},
-	pages = {s.},
-	mathesis = {Yüksek Lisans Tezi},
-	phdthesis = {Doktora Tezi},
-	techreport = {Teknik Rapor},}
+%\DefineBibliographyStrings{english}{%
+%	references = {KAYNAKLAR},
+%	and = {ve},
+%	andothers = {vd.},
+%	pages = {s.},
+%	mathesis = {Yüksek Lisans Tezi},
+%	phdthesis = {Doktora Tezi},
+%	techreport = {Teknik Rapor},}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% ENGLISH NOTATION FOR BIBLATEX. TURN OFF FOR TURKISH %%%%%
-%\DefineBibliographyStrings{english}{%
-%	mathesis = {M.S. Thesis},}
+\DefineBibliographyStrings{english}{%
+	mathesis = {M.S. Thesis},}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \renewbibmacro{in:}{}

@@ -4,13 +4,50 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass eqconf
+\textclass eqengconf
 \begin_preamble
 \usepackage{blindtext}
+
+%%% BibLaTeX Settings
+\AtEndPreamble{%
+
+%%%%% TURKISH NOTATION FOR BIBLATEX. TURN OFF FOR ENGLISH %%%%%
+%\DefineBibliographyStrings{english}{%
+%	references = {KAYNAKLAR},
+%	and = {ve},
+%	andothers = {vd.},
+%	pages = {s.},
+%	mathesis = {Yüksek Lisans Tezi},
+%	phdthesis = {Doktora Tezi},
+%	techreport = {Teknik Rapor},}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% ENGLISH NOTATION FOR BIBLATEX. TURN OFF FOR TURKISH %%%%%
+\DefineBibliographyStrings{english}{%
+	mathesis = {M.S. Thesis},}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\renewbibmacro{in:}{}
+\DeclareNameAlias{sortname}{family-given}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
+\DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+
+\renewbibmacro*{volume+number+eid}{%
+	\printfield{volume}%
+	%  \setunit*{\adddot}% DELETED
+	\setunit*{\addnbthinspace}% \addnbthinspace or \addnbspace
+	\printfield{number}%
+	\setunit{\addcomma\space}%
+	\printfield{eid}}
+}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language turkish
+\language english
 \language_package default
 \inputencoding utf8
 \fontencoding global
@@ -84,11 +121,7 @@
 \begin_body
 
 \begin_layout TitleEQ
-BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI
-\begin_inset Newline newline
-\end_inset
-
-BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI
+BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI
 \end_layout
 
 \begin_layout Author
@@ -286,7 +319,7 @@ blindtext
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout AnahtarKlmEQ
@@ -494,6 +527,51 @@ Diğer Bilgiler
 \end_layout
 
 \begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0col%
+width "40text%"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset VSpace -10pt
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename b.png
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:structure"
+
+\end_inset
+
+Bir bina yapısı.
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10pt
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset ERT
 status collapsed
 
@@ -541,54 +619,6 @@ blindtext
 \end_layout
 
 \begin_layout Standard
-\begin_inset Wrap figure
-lines 0
-placement r
-overhang 0col%
-width "40text%"
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset VSpace -12pt
-\end_inset
-
- 
-\begin_inset Graphics
-	filename b.PNG
-	lyxscale 50
-	scale 20
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:structure"
-
-\end_inset
-
-Bir bina yapısı.
-\end_layout
-
-\end_inset
-
-
-\begin_inset VSpace -10pt
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status collapsed
 
@@ -628,7 +658,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 40
 
@@ -789,12 +819,12 @@ blindtext
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1134,12 +1164,99 @@ blindtext
 \end_layout
 
 \begin_layout Standard
+Tablo (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:baskasonuc"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
+ Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Alt Alt Başlık
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Başka Diğer Bilgiler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Wrap table
 lines 0
 placement l
 overhang 0col%
 width "6cm"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1366,96 +1483,6 @@ c
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Tablo (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:baskasonuc"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-)'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
- Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Alt Alt Başlık
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Başka Diğer Bilgiler
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status collapsed
 
@@ -1481,7 +1508,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 40
 
@@ -1523,6 +1550,15 @@ noprefix "false"
 
 )'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
  Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bekin2018-MSThesis"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1581,7 +1617,7 @@ blindtext
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
-bibfiles "testbib"
+bibfiles "examplebib"
 
 \end_inset
 
