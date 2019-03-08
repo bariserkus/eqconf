@@ -241,4 +241,18 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 
+### LyX and stuff
 *.docx
+*.lyx~
+*.aux
+*.bbl
+*.blg
+*.log
+*.gz
+*.dvi
+*.lyx#
+*.bak
+*.sav
+*.backup
+*.mat
+*.asv

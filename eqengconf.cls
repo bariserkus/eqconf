@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{eqconf}[2019/02/20 Latex Class for Earthquake Conference]
+\ProvidesClass{eqengconf}[2019/02/20 Latex Class for Earthquake Engineering Conference]
 
 %%% Language Variables
 \newif\if@EngLang
@@ -13,7 +13,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
-\LoadClass[12pt, a4paper]{article}
+\LoadClass[11pt, a4paper]{article}
 
 %%% Packages
 \usepackage{mathptmx}
@@ -24,7 +24,7 @@ verbose,
 tmargin=30mm,
 headsep=7.75mm,
 headheight=15mm,
-bmargin=25mm,
+bmargin=20mm,
 lmargin=20mm,
 rmargin=20mm,
 footskip=10mm]{geometry}
@@ -36,16 +36,16 @@ footskip=10mm]{geometry}
 \renewcommand{\headrulewidth}{0pt}
 
 \if@EngLang
-	\def\headconf{\textbf{\textit{\small 5th International Conference on Earthquake Engineering and Seismology\\8-11 October 2019 – METU – Ankara / TURKEY}}}
+	\def\headconf{\textbf{\textit{\normalsize 5th International Conference on Earthquake Engineering and Seismology\\8-11 October 2019 – METU – Ankara / TURKEY}}}
 \fi
 \if@TurLang
-	\def\headconf{\textbf{\textit{\small 5. Uluslararası Deprem Mühendisliği ve Sismoloji 
+	\def\headconf{\textbf{\textit{\normalsize 5. Uluslararası Deprem Mühendisliği ve Sismoloji 
 			Konferansı\\8-11 Ekim 2019 – ODTÜ – ANKARA}}}
 \fi
 
 \lhead{\headconf}
 \chead{}
-\rhead{\includegraphics[width=43.64mm]{header.png}\vspace{1pt}}
+\rhead{\includegraphics[width=43.64mm]{header.png}}
 
 \fancypagestyle{firststyle}{
 	\lhead{\headconf}
@@ -61,40 +61,43 @@ footskip=10mm]{geometry}
 	\vspace{-1.1cm}
 	\begin{center}%
 		\let \footnote \thanks
-		{\large \bfseries \@title \par}%
+		{\Large \bfseries \@title \par}%
 		\vskip 0.7em%
 		{\lineskip .5em%
 			\begin{tabular}[t]{c}%
-				{\bfseries \@author}
+				{\large \@author}
 			\end{tabular}\par}%
 		\vskip 1em%
-		{\large \@date}%
+		{\@date}%
 	\end{center}%
 	\par
 	\vskip -0.5em}
 
 \def\fixturkishbug{%
 	\if@TurLang
-	\shorthandoff{=}
+		\shorthandoff{=}
 	\fi}
+
+
 
 
 %%% Abstract Settings
 \newcommand\abstrname{ÖZET:}
 \newcommand\absengname{ABSTRACT:}
-\newenvironment{ozet}
-	{{\bfseries \abstrname} \par \vspace{1.0ex \@plus .2ex}\vspace{\z@}}
+\newenvironment{ozeteq}
+	{\vspace{2.0ex \@plus .2ex}{\bfseries \abstrname} \par}
+	{\vspace{0.25ex \@plus .2ex}\vspace{\z@}}
 
-
-\renewenvironment{abstract}{\vspace{2.0ex \@plus .2ex}
-	{{\bfseries \absengname} \par \vspace{1.0ex \@plus .2ex}\vspace{\z@}}}
+\newenvironment{abstracteq}
+	{\vspace{2.0ex \@plus .2ex}{\bfseries \absengname} \par}
+	{\vspace{0.25ex \@plus .2ex}\vspace{\z@}}
 
 \newenvironment{keywords}{{\bfseries KEYWORDS:} }{\vspace{1em}}
 \newenvironment{anahtarkelimeler}{{\bfseries ANAHTAR KELİMELER:} }{\vspace{1em}}
 
 %%Authors
-\newcommand{\authorspec}[2]{\bfseries #2\textsuperscript{#1}}
-\newcommand{\affils}[2]{{\normalsize \bfseries \textsuperscript{#1}} \small {\itshape #2}}
+\newcommand{\authorname}[2]{\bfseries #2{\small \textsuperscript{#1}}}
+\newcommand{\affils}[2]{{\bfseries \textsuperscript{#1}}{\itshape #2}}
 \newcommand{\email}{\itshape Email: }
 
 
