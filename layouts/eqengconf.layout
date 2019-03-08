@@ -10,7 +10,6 @@ Input numarticle.inc
 Input article.layout
 
 AddToPreamble
-\usepackage{etoolbox}
 \usepackage[style=english]{csquotes}
 %%% Optional Math Operation: Makes bold greek letters more bold
 \usepackage{upgreek}   %Needed for Matrix Greek Letters

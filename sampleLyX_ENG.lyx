@@ -6,6 +6,7 @@
 \origin unavailable
 \textclass eqengconf
 \begin_preamble
+%\usepackage{etoolbox}  %%%% Keep it for Turkish. Turn off for English
 \usepackage{blindtext}
 
 %%% BibLaTeX Settings
@@ -541,7 +542,7 @@ status open
 
  
 \begin_inset Graphics
-	filename b.png
+	filename b.PNG
 	lyxscale 50
 	scale 20
 
@@ -658,7 +659,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.png
+	filename b.PNG
 	lyxscale 50
 	scale 40
 
@@ -1508,7 +1509,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.png
+	filename b.PNG
 	lyxscale 50
 	scale 40
 
