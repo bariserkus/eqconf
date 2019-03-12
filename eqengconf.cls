@@ -99,6 +99,7 @@ footskip=10mm]{geometry}
 \newcommand{\authorname}[2]{\bfseries #2{\small \textsuperscript{#1}}}
 \newcommand{\affils}[2]{{\bfseries \textsuperscript{#1}}{\itshape #2}}
 \newcommand{\email}{\itshape Email: }
+\newcommand{\titlesecondary}[1]{\vspace{1em} {\centering \bfseries \Large #1 \par} }
 
 
 

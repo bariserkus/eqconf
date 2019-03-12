@@ -305,6 +305,37 @@ bariserkus@itu.edu.tr
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{firststyle}  % Do not remove
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fixturkishbug   % Do not remove
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout OzetEQ
 \begin_inset ERT
 status open
@@ -343,37 +374,6 @@ blindtext
 
 \begin_layout KeywordsEQ
 keyword1, keyword2, keyword3.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Preview
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{firststyle}  % Do not remove
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-fixturkishbug   % Do not remove
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -540,7 +540,7 @@ status open
 
  
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 20
 
@@ -657,7 +657,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 40
 
@@ -1507,7 +1507,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 40
 
