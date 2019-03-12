@@ -121,6 +121,10 @@
 
 \begin_layout TitleEQ
 BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI
+\begin_inset Newline newline
+\end_inset
+
+BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI
 \end_layout
 
 \begin_layout Author
@@ -305,46 +309,6 @@ bariserkus@itu.edu.tr
 
 \end_layout
 
-\begin_layout OzetEQ
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout AnahtarKlmEQ
-anahtar kelime1, anahtar kelime2, anahtar kelime3.
-\end_layout
-
-\begin_layout AbstractEQ
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout KeywordsEQ
-keyword1, keyword2, keyword3.
-\end_layout
-
 \begin_layout Standard
 \begin_inset Preview
 
@@ -374,6 +338,54 @@ fixturkishbug   % Do not remove
 \end_inset
 
 
+\end_layout
+
+\begin_layout OzetEQ
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout AnahtarKlmEQ
+anahtar kelime1, anahtar kelime2, anahtar kelime3.
+\end_layout
+
+\begin_layout TitleSecondary
+TITLE OF THE PAPER TITLE OF THE PAPER
+\begin_inset Newline newline
+\end_inset
+
+TITLE OF THE PAPER TITLE OF THE PAPER
+\end_layout
+
+\begin_layout AbstractEQ
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout KeywordsEQ
+keyword1, keyword2, keyword3.
 \end_layout
 
 \begin_layout Section
@@ -540,7 +552,7 @@ status open
 
  
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 20
 
@@ -657,7 +669,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 40
 
@@ -1507,7 +1519,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 40
 

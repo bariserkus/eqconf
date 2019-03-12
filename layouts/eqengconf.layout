@@ -73,6 +73,27 @@ Style TitleEQ
 	HTMLTitle             true
 End
 
+Style TitleSecondary
+	Margin                Static
+	LatexType             Command
+	Category              FrontMatter
+	LatexName             titlesecondary
+	ParSkip               0.4
+	ItemSep               0
+	TopSep                1
+	BottomSep             0.5
+	ParSep                1
+	Align                 Center
+	LabelType             No_Label
+	Font
+	  Size                Larger
+	  Series              Bold
+	  Color               orange
+	EndFont
+	HTMLTag               h1
+	HTMLTitle             true
+End
+
 InsetLayout Flex:AuthorNameEQ
 	LyXType               Custom
 	LabelString           "AuthorName"

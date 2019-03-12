@@ -16,16 +16,15 @@
 	}{#1}%
 }
 
-\title{BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI\\
-	BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI}
+\title{TITLE OF THE PAPER TITLE OF THE PAPER\\TITLE OF THE PAPER TITLE OF THE PAPER}
 \author{\authorname{1}{Ahmet Yılmaz},
 		\authorname{*}{Hakan Özen} ve
 		\authorname{1}{John Doe}}
 
 \date{%%% \date kullanılarak, kurum ve e-posta bilgileri girilmektedir.
-	\affils{1}{Araş. Gör., İnşaat Müh. Bölümü, Abece Üniversitesi, Güzelkent}\\
-	\affils{*}{Prof. Dr., Jeofizik Müh. Bölümü, Abece Teknik Üniversitesi, Büyükkent}\\
-	\email{gönderenyazar@kurum.edu.tr}%%% Sadece gönderen yazarın e-postası girilecektir.
+	\affils{1}{Res. Assist., Civil Eng. Dept., Abece University, Istanbul}\\
+	\affils{*}{Prof. Dr., Civil Eng. Dept., Abece University, Istanbul}\\
+	\email{correspondingauthor@kurum.edu.tr}%%% Sadece gönderen yazarın e-postası girilecektir.
 }
 
 
@@ -81,16 +80,18 @@ doi=false,isbn=false,url=false,eprint=false,giveninits]{biblatex}
 
  
 %%% A Turkish Abstract has to be provided if the paper is in Turkish
-\begin{ozeteq}
-\blindtext
-\end{ozeteq}
+%\begin{ozeteq}
+%\blindtext
+%\end{ozeteq}
+%\begin{anahtarkelimeler}
+%anahtar kelime1, anahtar kelime2, anahtar kelime3.
+%\end{anahtarkelimeler}
 
-\begin{anahtarkelimeler}
-anahtar kelime1, anahtar kelime2, anahtar kelime3.
-\end{anahtarkelimeler}
 
+%%% All papers (both Turkish and English) have to provide English Title and Abstract
+%Secondary title is not provided in the English papers
+%\titlesecondary{TITLE OF THE PAPER TITLE OF THE PAPER\\TITLE OF THE PAPER TITLE OF THE PAPER}
 
-%%% All papers (both Turkish and English) have to provide English abstract
 \begin{abstracteq} 
 \blindtext
 \end{abstracteq}
@@ -100,7 +101,7 @@ keyword1, keyword2, keyword3.
 \end{keywords}
 
  
-\section{GİRİŞ BÖLÜMÜ}
+\section{INTRODUCTION}
 \blindtext
 \begin{equation}\label{eq:massdef}    %Denklemden önce boşluk bırakılmamalı
 x=\dfrac{a}{b}, \quad \boldgreek{\alpha}=\boldgreek{\upphi}
@@ -110,11 +111,11 @@ x=\dfrac{a}{b}, \quad \boldgreek{\alpha}=\boldgreek{\upphi}
 
 Görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır (\cite{Skinner1993}).
 
-\section{TEORİ BÖLÜMÜ}
+\section{THEORY}
 
 \blindtext
 
-\subsection{Denklemler}
+\subsection{Equations}
 \blindtext
 \begin{equation}\label{eq:energy} %Denklemden önce boşluk bırakılmamalı
 g(x)=\int_a^b f(x)dx, \quad x=\dfrac{a}{b}, \quad \boldgreek{\alpha}=\boldgreek{\upphi}
@@ -128,7 +129,7 @@ olacaktır. \textcite{Narasimhan2006, Erkus2006}'da gösterildiği üzere, yapı
 
 \blindtext
 
-\subsection{Diğer Bilgiler}
+\subsection{Other Section}
 \blindtext
 
 Şekil (\ref{fig:structure})'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
@@ -162,12 +163,12 @@ Denklem (\ref{eq:stiffness})'de de görüldüğü üzere, sonuçların doğru ol
 
 \blindtext
 
-\subsubsection*{Alt Alt Başlık}
+\subsubsection*{Sub Sub Section}
 \blindtext
 
 \blindtext
 
-\subsection{Başka Diğer Bilgiler}
+\subsection{Another Section}
 \blindtext
 
 \blindtext
@@ -195,16 +196,16 @@ Tablo (\ref{tab:onemlibilgi})'de de görüldüğü üzere, sonuçların doğru o
 
 \blindtext
 
-\section{YENİ BÖLÜM}
+\section{NEW SECTION}
 \blindtext
 
 \blindtext
 
-\subsection{Başka Diğer Bilgiler}
+\subsection{A New Subsection}
 
 \blindtext
 
-\subsection{Başka Başka Diğer Bilgiler}
+\subsection{Another Subsection}
 
 \blindtext
 
@@ -229,12 +230,12 @@ Tablo (\ref{tab:baskasonuc})'de de görüldüğü üzere, sonuçların doğru ol
 
 \blindtext
 
-\subsubsection*{Alt Alt Başlık}
+\subsubsection*{Another Sub Sub Section}
 \blindtext
 
 \blindtext
 
-\subsection{Başka Diğer Bilgiler}
+\subsection{A New Sub Section}
 \blindtext
 
 \blindtext
@@ -249,7 +250,7 @@ Tablo (\ref{tab:baskasonuc})'de de görüldüğü üzere, sonuçların doğru ol
 
 \blindtext
 
-\section{SONUÇ}
+\section{CONCLUSIONS}
 \blindtext
 
 \blindtext

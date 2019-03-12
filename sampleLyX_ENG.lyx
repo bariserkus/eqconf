@@ -122,7 +122,11 @@
 \begin_body
 
 \begin_layout TitleEQ
-BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI
+TITLE OF THE PAPER TITLE OF THE PAPER
+\begin_inset Newline newline
+\end_inset
+
+TITLE OF THE PAPER TITLE OF THE PAPER
 \end_layout
 
 \begin_layout Author
@@ -234,9 +238,11 @@ status open
 status open
 
 \begin_layout Plain Layout
-Araş.
- Gör., İnşaat Müh.
- Bölümü, Abece Üniversitesi, Güzelkent
+Res.
+ Assist., Civil Eng.
+ Dept.
+ Univ.
+ of ABC, Istanbul
 \end_layout
 
 \end_inset
@@ -270,8 +276,10 @@ status open
 
 \begin_layout Plain Layout
 Prof.
- Dr., Jeofizik Müh.
- Bölümü, Abece Teknik Üniversitesi, Büyükkent
+ Dr., Civil Eng.
+ Dept.
+ Univ.
+ of ABC, Istanbul
 \end_layout
 
 \end_inset
@@ -294,7 +302,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-bariserkus@itu.edu.tr
+correspondingauthor@itu.edu.tr
 \end_layout
 
 \end_inset
@@ -305,46 +313,6 @@ bariserkus@itu.edu.tr
 \end_inset
 
 
-\end_layout
-
-\begin_layout OzetEQ
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout AnahtarKlmEQ
-anahtar kelime1, anahtar kelime2, anahtar kelime3.
-\end_layout
-
-\begin_layout AbstractEQ
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout KeywordsEQ
-keyword1, keyword2, keyword3.
 \end_layout
 
 \begin_layout Standard
@@ -378,8 +346,28 @@ fixturkishbug   % Do not remove
 
 \end_layout
 
+\begin_layout AbstractEQ
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout KeywordsEQ
+keyword1, keyword2, keyword3.
+\end_layout
+
 \begin_layout Section
-GİRİŞ BÖLÜMÜ
+INTRODUCTION
 \end_layout
 
 \begin_layout Standard
@@ -436,7 +424,7 @@ literal "false"
 \end_layout
 
 \begin_layout Section
-TEORİ BÖLÜMÜ
+THEORY
 \end_layout
 
 \begin_layout Standard
@@ -456,7 +444,7 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-Denklemler
+Equations
 \end_layout
 
 \begin_layout Standard
@@ -524,7 +512,7 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-Diğer Bilgiler
+Sub Section
 \end_layout
 
 \begin_layout Standard
@@ -542,7 +530,7 @@ status open
 
  
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 20
 
@@ -659,7 +647,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 40
 
@@ -745,7 +733,7 @@ blindtext
 \end_layout
 
 \begin_layout Subsubsection*
-Alt Alt Başlık
+Sub Sub Section - No Numbered
 \end_layout
 
 \begin_layout Standard
@@ -781,7 +769,7 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-Başka Diğer Bilgiler
+Other Info
 \end_layout
 
 \begin_layout Standard
@@ -1089,7 +1077,7 @@ blindtext
 \end_layout
 
 \begin_layout Section
-YENİ BÖLÜM
+NEW SECTION
 \end_layout
 
 \begin_layout Standard
@@ -1125,7 +1113,7 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-Başka Diğer Bilgiler
+Other Additional Info
 \end_layout
 
 \begin_layout Standard
@@ -1145,7 +1133,7 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-Başka Başka Diğer Bilgiler
+Other Other Other Info
 \end_layout
 
 \begin_layout Standard
@@ -1196,7 +1184,7 @@ blindtext
 \end_layout
 
 \begin_layout Subsubsection*
-Alt Alt Başlık
+A New Sub Sub Section
 \end_layout
 
 \begin_layout Standard
@@ -1232,7 +1220,7 @@ blindtext
 \end_layout
 
 \begin_layout Subsection
-Başka Diğer Bilgiler
+Other Other Other Infor
 \end_layout
 
 \begin_layout Standard
@@ -1509,7 +1497,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.PNG
+	filename b.png
 	lyxscale 50
 	scale 40
 
@@ -1579,7 +1567,7 @@ blindtext
 \end_layout
 
 \begin_layout Section
-SONUÇ
+CONCLUSIONS
 \end_layout
 
 \begin_layout Standard
