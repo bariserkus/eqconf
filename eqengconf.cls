@@ -146,9 +146,9 @@ footskip=10mm]{geometry}
 \setlength\belowcaptionskip{0\p@}
 \long\def\@makecaption#1#2{%
 	\vskip\abovecaptionskip
-	\sbox\@tempboxa{{\bfseries #1.} #2}%
+	\sbox\@tempboxa{\centering {\bfseries #1.} #2}%
 	\ifdim \wd\@tempboxa >\hsize
-	{\bfseries #1.} #2\par
+	\centering {\bfseries #1.} #2\par
 	\else
 	\global \@minipagefalse
 	\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
