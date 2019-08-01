@@ -19,10 +19,14 @@
 \usepackage{mathptmx}
 \renewcommand{\familydefault}{\rmdefault} 
 \usepackage{graphicx}
+\usepackage{xcolor}
+\definecolor{eqblue}{RGB}{27, 117, 188}
+\definecolor{eqred}{RGB}{190, 30, 45}
+
 \usepackage[%
 verbose,
 tmargin=30mm,
-headsep=7.75mm,
+headsep=10.5mm,
 headheight=15mm,
 bmargin=20mm,
 lmargin=20mm,
@@ -34,14 +38,20 @@ footskip=10mm]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
+\fancyheadoffset[LR]{1cm}
 
-\if@EngLang
-	\def\headconf{\textbf{\textit{\normalsize 5th International Conference on Earthquake Engineering and Seismology\\8-11 October 2019 – METU – Ankara / TURKEY}}}
-\fi
-\if@TurLang
-	\def\headconf{\textbf{\textit{\normalsize 5. Uluslararası Deprem Mühendisliği ve Sismoloji 
-			Konferansı\\8-11 Ekim 2019 – ODTÜ – ANKARA}}}
-\fi
+%\if@EngLang
+%	\def\headconf{\textbf{\textit{\normalsize 5th International Conference on
+%           Earthquake Engineering and Seismology\\8-11 October 2019 – METU – Ankara / TURKEY}}}
+%\fi
+%\if@TurLang
+%	\def\headconf{\textbf{\textit{\normalsize 5. Uluslararası Deprem Mühendisliği ve Sismoloji 
+%			Konferansı\\8-11 Ekim 2019 – ODTÜ – ANKARA}}}
+%\fi
+
+% New template uses English title of the conference for both Turkish and English papers
+\def\headconf{\textbf{\normalsize \textcolor{eqblue}{5. International Conference on
+        Earthquake Engineering and Seismology (5ICEES)}\\\textcolor{eqred}{8-11 OCTOBER 2019, METU ANKARA TURKEY}}}
 
 \lhead{\headconf}
 \chead{}
@@ -50,9 +60,10 @@ footskip=10mm]{geometry}
 \fancypagestyle{firststyle}{
 	\lhead{\headconf}
 	\chead{}
-	\rhead{\includegraphics[width=43.64mm]{header.png}}}
+	%\rhead{\includegraphics[width=43.64mm]{header_new.png}}}
+	\rhead{\raisebox{-0.2cm}{\includegraphics[width=43.64mm]{header.png}}}}
 
-
+%\makebox[0pt][l]{}
 
 %%% Placement of the Title Page Items
 \def\@maketitle{%
