@@ -55,7 +55,7 @@ footskip=10mm]{geometry}
 
 \lhead{\headconf}
 \chead{}
-\rhead{\includegraphics[width=43.64mm]{header.png}}
+\rhead{\raisebox{-0.2cm}{\includegraphics[width=43.64mm]{header.png}}}
 
 \fancypagestyle{firststyle}{
 	\lhead{\headconf}
@@ -68,21 +68,14 @@ footskip=10mm]{geometry}
 %%% Placement of the Title Page Items
 \def\@maketitle{%
 	\newpage
-	\null
-	\vspace{-1.1cm}
-	\begin{center}%
-		\let \footnote \thanks
-		{\Large \bfseries \@title \par}%
-		\vskip 0.7em%
-		{\lineskip .5em%
-			\begin{tabular}[t]{c}%
-				{\large \@author}
-			\end{tabular}\par}%
-		\vskip 1em%
-		{\@date}%
-	\end{center}%
-	\par
-	\vskip -0.5em}
+	\let \footnote \thanks
+	{\centering \Large \bfseries \@title \par}
+	\vspace{1.1em}
+	{\centering \large \@author \par}
+	\vspace{1.1em}
+	{\centering \small \@date \par}
+	\vspace{1.1em}
+}%
 
 \def\fixturkishbug{%
 	\if@TurLang
@@ -96,42 +89,47 @@ footskip=10mm]{geometry}
 \newcommand\abstrname{ÖZET:}
 \newcommand\absengname{ABSTRACT:}
 \newenvironment{ozeteq}
-	{\vspace{2.0ex \@plus .2ex}{\bfseries \abstrname} \par}
-	{\vspace{0.25ex \@plus .2ex}\vspace{\z@}}
+	{\vspace{0.0ex \@plus .2ex}{\noindent \bfseries \abstrname} \par \vspace{1.0em} \noindent\ignorespaces}
+	{\vspace{1.0em \@plus .2ex \@minus .1ex}\vspace{\z@}}
 
 \newenvironment{abstracteq}
-	{\vspace{2.0ex \@plus .2ex}{\bfseries \absengname} \par}
-	{\vspace{0.25ex \@plus .2ex}\vspace{\z@}}
+	{\vspace{0.0ex \@plus .2ex}{\noindent \bfseries \absengname} \par \vspace{1.0em} \noindent\ignorespaces}
+	{\vspace{1.0em \@plus .2ex \@minus .1ex}\vspace{\z@}}
 
-\newenvironment{keywords}{{\bfseries KEYWORDS:} }{\vspace{1em}}
-\newenvironment{anahtarkelimeler}{{\bfseries ANAHTAR KELİMELER:} }{\vspace{1em}}
+\newenvironment{keywords}{{\noindent \bfseries KEYWORDS:} }{\vspace{0em}}
+\newenvironment{anahtarkelimeler}{{\noindent \bfseries ANAHTAR KELİMELER:} }{\vspace{2.2em}}
+
+
 
 %%Authors
 \newcommand{\authorname}[2]{\bfseries #2{\small \textsuperscript{#1}}}
 \newcommand{\affils}[2]{{\bfseries \textsuperscript{#1}}{\itshape #2}}
 \newcommand{\email}{\itshape Email: }
-\newcommand{\titlesecondary}[1]{\vspace{1em} {\centering \bfseries \Large #1 \par} }
+\newcommand{\titlesecondary}[1]{\vspace{0em} {\centering \bfseries \Large #1 \par \vspace{1em}} }
 
-
+% Applies to KOMA Script
+%%\usepackage{xpatch}
+%%\xapptocmd{\sectionlinesformat}{\vspace*{-2\parskip}}{}{}
 
 %%% Section Header Settings
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0.25em}
+%\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.0em}
+\renewcommand*{\@seccntformat}[1]{\csname the#1\endcsname\hspace{1ex}}
 \renewcommand\thesection {\@arabic\c@section.}
 \renewcommand\thesubsection {\thesection\@arabic\c@subsection.}
 \renewcommand\thesubsubsection{\thesubsection\@arabic\c@subsubsection.}
 \renewcommand\section{\@startsection {section}{1}{\z@}%
-	{-2.5ex \@plus -1ex \@minus -.2ex}%
-	{1.0ex \@plus.2ex}%
+	{-2.2em \@plus -1ex \@minus -.2ex}%
+	{1.0em \@plus .2ex}%
 	{\normalfont\bfseries}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-	{-2.0ex\@plus -1ex \@minus -.2ex}%
-	{1.0ex \@plus .2ex}%
+	{-1.0em\@plus -1ex \@minus -.2ex}%
+	{0.01ex \@plus 0.2ex}%
 	{\normalfont\itshape\bfseries}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-	{-2.00ex\@plus -1ex \@minus -.2ex}%
-	{1.0ex \@plus .2ex}%
-	{\normalfont\bfseries}}
+	{-1.0em\@plus -1ex \@minus -.2ex}%
+	{0.01ex \@plus 0.2ex}%
+	{\normalfont\itshape}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
 	{3.25ex \@plus1ex \@minus .2ex}%
 	{-1em}%

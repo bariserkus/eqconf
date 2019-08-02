@@ -18,13 +18,13 @@
 
 \title{BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI\\
 	BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI BİLDİRİ BAŞLIĞI}
-\author{\authorname{1}{Ahmet Yılmaz},
-		\authorname{*}{Hakan Özen} ve
-		\authorname{1}{John Doe}}
+\author{\authorname{1}{Yılmaz A.},
+		\authorname{*}{Özen H.F.},
+		\authorname{1}{Doe J.K.}}
 
 \date{%%% \date kullanılarak, kurum ve e-posta bilgileri girilmektedir.
-	\affils{1}{Araş. Gör., İnşaat Müh. Bölümü, Abece Üniversitesi, Güzelkent}\\
-	\affils{*}{Prof. Dr., Jeofizik Müh. Bölümü, Abece Teknik Üniversitesi, Büyükkent}\\
+	\affils{1}{Araş. Gör., İnşaat Müh. Bölümü, Abece Üniversitesi, Güzelkent, Türkiye}\\
+	\affils{*}{Prof. Dr., Jeofizik Müh. Bölümü, Abece Teknik Üniversitesi, Büyükkent, Tükiye}\\
 	\email{gönderenyazar@kurum.edu.tr}%%% Sadece gönderen yazarın e-postası girilecektir.
 }
 
@@ -35,7 +35,7 @@
 \usepackage[]{babel}
 \usepackage{xkeyval}
 \usepackage[style=authoryear,maxcitenames=2,maxbibnames=10, 
-doi=false,isbn=false,url=false,eprint=false,giveninits]{biblatex}
+doi=false,isbn=false,url=false,eprint=false,giveninits, terseinits=true]{biblatex}
 \usepackage{etoolbox}
 \usepackage[style=english]{csquotes}
 
@@ -43,8 +43,8 @@ doi=false,isbn=false,url=false,eprint=false,giveninits]{biblatex}
 \DefineBibliographyStrings{english}{%
 	references = {KAYNAKLAR},
 	and = {ve},
-	andothers = {vd.},
-	pages = {s.},
+	andothers = {\em v.d.},
+	pages = {},
 	mathesis = {Yüksek Lisans Tezi},
 	phdthesis = {Doktora Tezi},
 	techreport = {Teknik Rapor},}
@@ -57,21 +57,37 @@ doi=false,isbn=false,url=false,eprint=false,giveninits]{biblatex}
 
 \renewbibmacro{in:}{}
 \DeclareNameAlias{sortname}{family-given}
-\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibbold{\mkbibparens{#1}}}
 \DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
 \DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
 \DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
 \DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+
+\renewcommand*{\bibpagespunct}{\addcolon}
+\renewcommand*{\multicitedelim}{\addsemicolon\space}
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+\renewcommand*{\revsdnamepunct}{}
+\renewcommand*{\finalnamedelim}{\addspace \bibstring {and}\space}
+
+\renewcommand*{\nameyeardelim}{%
+	\ifnumgreater{\value{listcount}}{2}{\nameyeardelim}{\addcomma\space}%
+	\ifnumequal{\value{listcount}}{1}{\nameyeardelim}{\addcomma\space}%
+}
 
 \renewbibmacro*{volume+number+eid}{%
 	\printfield{volume}%
 	%  \setunit*{\adddot}% DELETED
 	\setunit*{\addnbthinspace}% \addnbthinspace or \addnbspace
 	\printfield{number}%
-	\setunit{\addcomma\space}%
-	\printfield{eid}}
+	%\setunit*{\addcolon}%
+	%\printfield{eid}
+}
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{day}}
 
 \addbibresource{examplebib.bib}
+
+
 
 \begin{document}
 
@@ -124,16 +140,15 @@ Görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı s
 \begin{equation}\label{eq:energy} %Denklemden önce boşluk bırakılmamalı
 g(x)=\int_a^b f(x)dx, \quad x=\dfrac{a}{b}, \quad \boldgreek{\alpha}=\boldgreek{\upphi}
 \end{equation}
-
 Denklem (\ref{eq:energy})'de de görüldüğü üzere, sonuçların doğru olduğu 
 anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun 
 olacaktır. \textcite{Narasimhan2006, Erkus2006}'da gösterildiği üzere, yapılan 
-çalışmaların uygun olduğu anlaşılmaktadır. \cite{Bekin2018-MSThesis}, 
-\cite{Constantinou2011}.
+çalışmaların uygun olduğu anlaşılmaktadır. (\cite{Bekin2018-MSThesis}; 
+\cite{Constantinou2011}) (\cites{Bekin2018-MSThesis, Constantinou2011}).
 
 \blindtext
 
-\subsection{Diğer Bilgiler}
+\subsection{Acaip Diğer Bilgiler}
 \blindtext
 
 Şekil (\ref{fig:structure})'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
@@ -162,12 +177,11 @@ olacaktır. \textcite{Narasimhan2006, Erkus2006}'da gösterildiği üzere, yapı
 \begin{equation}\label{eq:stiffness} %Denklemden önce boşluk bırakılmamalı
 g(x)=\int_a^b f(x)dx, \quad x=\dfrac{a}{b}, \quad \boldgreek{\alpha}=\boldgreek{\upphi}
 \end{equation}
-
 Denklem (\ref{eq:stiffness})'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
 
 \blindtext
 
-\subsubsection*{Alt Alt Başlık}
+\subsubsection{Alt Alt Başlık}
 \blindtext
 
 \blindtext
@@ -181,7 +195,7 @@ Denklem (\ref{eq:stiffness})'de de görüldüğü üzere, sonuçların doğru ol
 \begin{table}[]
 %	\vspace{-5pt}
 	\setlength\abovecaptionskip{-5pt}
-	\setlength\belowcaptionskip{10pt}
+	\setlength\belowcaptionskip{5pt}
 	\centering
 		\caption{\label{tab:onemlibilgi}Önemli Bilgiler.}
 		\begin{tabular}{l|c|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
@@ -192,6 +206,7 @@ Denklem (\ref{eq:stiffness})'de de görüldüğü üzere, sonuçların doğru ol
 			2 & 10.1 & b\\
 			3 & 23.113231 & c\\
 		\end{tabular}
+	 \vspace{-5pt}
 \end{table}
 
 Tablo (\ref{tab:onemlibilgi})'de de görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır. Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır.
@@ -209,17 +224,17 @@ Tablo (\ref{tab:onemlibilgi})'de de görüldüğü üzere, sonuçların doğru o
 
 \blindtext
 
-\subsection{Başka Başka Diğer Bilgiler}
+\subsection{Yeni Başka Diğer Bilgiler}
 
 \blindtext
 
 \begin{wraptable}{l}{6cm}
-	\setlength\abovecaptionskip{0pt}
-	\setlength\belowcaptionskip{15pt}
+	\setlength\abovecaptionskip{10pt}
+	\setlength\belowcaptionskip{5pt}
 	\vspace{-10pt}
 	\centering
 	\caption{\label{tab:baskasonuc}Başka sonuçlar Başka sonuçlar Başka sonuçlar.}
-	\begin{tabular}{l|c|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+	\begin{tabular}{c|c|c} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
 		\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
 		$\alpha$ & $\beta$ & $\gamma$ \\
 		\hline
@@ -234,7 +249,7 @@ Tablo (\ref{tab:baskasonuc})'de de görüldüğü üzere, sonuçların doğru ol
 
 \blindtext
 
-\subsubsection*{Alt Alt Başlık}
+\subsubsection{Alt Alt Başlık}
 \blindtext
 
 \blindtext
