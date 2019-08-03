@@ -35,7 +35,7 @@
 \usepackage[]{babel}
 \usepackage{xkeyval}
 \usepackage[style=authoryear,maxcitenames=2,maxbibnames=10, 
-doi=false,isbn=false,url=false,eprint=false,giveninits, terseinits=true]{biblatex}
+     doi=false,isbn=false,url=false,eprint=false,giveninits, terseinits=true]{biblatex}
 \usepackage{etoolbox}
 \usepackage[style=english]{csquotes}
 
@@ -52,8 +52,11 @@ doi=false,isbn=false,url=false,eprint=false,giveninits, terseinits=true]{biblate
 
 %%%%% ENGLISH NOTATION FOR BIBLATEX. TURN OFF FOR TURKISH %%%%%
 %\DefineBibliographyStrings{english}{%
+%	andothers = {\em et al\addperiod},
+%	pages = {},
 %	mathesis = {M.S. Thesis},}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \renewbibmacro{in:}{}
 \DeclareNameAlias{sortname}{family-given}
@@ -91,11 +94,15 @@ doi=false,isbn=false,url=false,eprint=false,giveninits, terseinits=true]{biblate
 
 \begin{document}
 
-%%%%%% Keep thes lines %%%%%
+%%%%%% Keep these lines %%%%%
 \fixturkishbug %% For the Turkish-\includegraphics bug
 \maketitle
 \thispagestyle{firststyle}
 %%%%%%%
+
+%%% Space of equations
+\setlength{\abovedisplayskip}{1em}
+\setlength{\belowdisplayskip}{1.1em}
 
  
 %%% A Turkish Abstract has to be provided if the paper is in Turkish
