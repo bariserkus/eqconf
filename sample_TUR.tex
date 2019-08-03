@@ -35,7 +35,8 @@
 \usepackage[]{babel}
 \usepackage{xkeyval}
 \usepackage[style=authoryear,maxcitenames=2,maxbibnames=10, 
-     doi=false,isbn=false,url=false,eprint=false,giveninits, terseinits=true]{biblatex}
+     doi=false,isbn=false,url=false,eprint=false, giveninits,
+     terseinits=true]{biblatex}
 \usepackage{etoolbox}
 \usepackage[style=english]{csquotes}
 
@@ -43,7 +44,7 @@
 \DefineBibliographyStrings{english}{%
 	references = {KAYNAKLAR},
 	and = {ve},
-	andothers = {\em v.d.},
+	andothers = {\em v\addperiod d\addperiod},
 	pages = {},
 	mathesis = {Yüksek Lisans Tezi},
 	phdthesis = {Doktora Tezi},
@@ -65,12 +66,14 @@
 \DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
 \DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
 \DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+%\DeclareDelimFormat{nameyeardelim}{\addcomma\space}
 
 \renewcommand*{\bibpagespunct}{\addcolon}
 \renewcommand*{\multicitedelim}{\addsemicolon\space}
 \renewcommand*{\nameyeardelim}{\addcomma\space}
 \renewcommand*{\revsdnamepunct}{}
-\renewcommand*{\finalnamedelim}{\addspace \bibstring {and}\space}
+%\renewcommand*{\finalnamedelim}{\addspace \bibstring {and}\space}
+\renewcommand*{\finalnamedelim}{\addcomma\space}
 
 \renewcommand*{\nameyeardelim}{%
 	\ifnumgreater{\value{listcount}}{2}{\nameyeardelim}{\addcomma\space}%
