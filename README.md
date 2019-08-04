@@ -2,8 +2,13 @@
 Latex Class and LyX Layout for 5. International Conference On Earthquake Engineering And Seismology, 2019 (5. ICEES, 2019)
 
 * Class file has to be installed with `header.png`.
-* Sample LaTeX files are provided for English and Turkish Languages
-* Sample LyX files are provided for English and Turkish Languages
+* Sample LaTeX files are provided for English and Turkish Languages.
+* Sample LyX files are provided for English and Turkish Languages.
+
+## Update 5 August, 2019
+
+* Fixed the issue with disambiguity using `uniquelist=false`.
+* Fixed issue with `et al.` replaceing `\addperiod` with `\adddot` in the redefinition of `andothers`.
 
 ## Update 3 August, 2019
 
