@@ -16,7 +16,7 @@
 %\DefineBibliographyStrings{english}{%
 %	references = {KAYNAKLAR},
 %	and = {ve},
-%	andothers = {\em v.d.},
+%	andothers = {\it v\adddot d\adddot},
 %	pages = {},
 %	mathesis = {Yüksek Lisans Tezi},
 %	phdthesis = {Doktora Tezi},
@@ -25,7 +25,7 @@
 
 %%%%% ENGLISH NOTATION FOR BIBLATEX. TURN OFF FOR TURKISH %%%%%
 \DefineBibliographyStrings{english}{%
-	andothers = {\em et al\addperiod},
+	andothers = {\it et\addabbrvspace al\adddot},
 	pages = {},
 	mathesis = {M.S. Thesis},}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,19 +37,15 @@
 \DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
 \DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
 \DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+
 %\DeclareDelimFormat{nameyeardelim}{\addcomma\space}
+%\renewcommand*{\nameyeardelim}{\addcomma\space}
 
 \renewcommand*{\bibpagespunct}{\addcolon}
 \renewcommand*{\multicitedelim}{\addsemicolon\space}
-\renewcommand*{\nameyeardelim}{\addcomma\space}
 \renewcommand*{\revsdnamepunct}{}
-%\renewcommand*{\finalnamedelim}{\addspace \bibstring {and}\space}
-\renewcommand*{\finalnamedelim}{\addcomma\space}
-
-\renewcommand*{\nameyeardelim}{%
-	\ifnumgreater{\value{listcount}}{2}{\nameyeardelim}{\addcomma\space}%
-	\ifnumequal{\value{listcount}}{1}{\nameyeardelim}{\addcomma\space}%
-}
+%\renewcommand*{\finalnamedelim}{\addcomma \addspace \bibstring {and}\space}
+%\renewcommand*{\finalnamedelim}{\addcomma\space}
 
 \renewbibmacro*{volume+number+eid}{%
 	\printfield{volume}%
@@ -104,7 +100,7 @@
 \cite_engine biblatex
 \cite_engine_type authoryear
 \biblio_style plain
-\biblio_options style=authoryear,maxcitenames=2,maxbibnames=10, doi=false,isbn=false,url=false,eprint=false, giveninits, terseinits=true
+\biblio_options style=authoryear,maxcitenames=2,maxbibnames=10, doi=false,isbn=false,url=false,eprint=false, giveninits, terseinits=true, dashed=false, uniquelist=false
 \biblatex_bibstyle authoryear
 \biblatex_citestyle authoryear
 \use_bibtopic false
