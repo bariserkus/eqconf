@@ -559,32 +559,12 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Diğer Bilgiler
-\end_layout
-
-\begin_layout Standard
 \begin_inset Wrap figure
 lines 0
 placement r
 overhang 0col%
 width "40text%"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -624,6 +604,26 @@ Bir bina yapısı.
 \end_inset
 
 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diğer Bilgiler
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status collapsed
 
