@@ -16,8 +16,8 @@
 %\DefineBibliographyStrings{english}{%
 %	references = {KAYNAKLAR},
 %	and = {ve},
-%	andothers = {vd.},
-%	pages = {s.},
+%	andothers = {\it v\adddot d\adddot},
+%	pages = {},
 %	mathesis = {Yüksek Lisans Tezi},
 %	phdthesis = {Doktora Tezi},
 %	techreport = {Teknik Rapor},}
@@ -25,25 +25,38 @@
 
 %%%%% ENGLISH NOTATION FOR BIBLATEX. TURN OFF FOR TURKISH %%%%%
 \DefineBibliographyStrings{english}{%
+	andothers = {\it et\addabbrvspace al\adddot},
+	pages = {},
 	mathesis = {M.S. Thesis},}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \renewbibmacro{in:}{}
 \DeclareNameAlias{sortname}{family-given}
-\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibbold{\mkbibparens{#1}}}
 \DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
 \DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
 \DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
 \DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+
+%\DeclareDelimFormat{nameyeardelim}{\addcomma\space}
+%\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+\renewcommand*{\bibpagespunct}{\addcolon}
+\renewcommand*{\multicitedelim}{\addsemicolon\space}
+\renewcommand*{\revsdnamepunct}{}
+%\renewcommand*{\finalnamedelim}{\addcomma \addspace \bibstring {and}\space}
+%\renewcommand*{\finalnamedelim}{\addcomma\space}
 
 \renewbibmacro*{volume+number+eid}{%
 	\printfield{volume}%
 	%  \setunit*{\adddot}% DELETED
 	\setunit*{\addnbthinspace}% \addnbthinspace or \addnbspace
 	\printfield{number}%
-	\setunit{\addcomma\space}%
-	\printfield{eid}}
+	%\setunit*{\addcolon}%
+	%\printfield{eid}
+}
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{day}}
 }
 \end_preamble
 \use_default_options true
@@ -87,7 +100,7 @@
 \cite_engine biblatex
 \cite_engine_type authoryear
 \biblio_style plain
-\biblio_options style=authoryear,maxcitenames=2,maxbibnames=10, doi=false,isbn=false,url=false,eprint=false,giveninits
+\biblio_options style=authoryear,maxcitenames=2,maxbibnames=10, doi=false,isbn=false,url=false,eprint=false, giveninits, terseinits=true, dashed=false, uniquelist=false
 \biblatex_bibstyle authoryear
 \biblatex_citestyle authoryear
 \use_bibtopic false
@@ -148,7 +161,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-Ahmet Yılmaz
+Yılmaz A.
 \end_layout
 
 \end_inset
@@ -177,7 +190,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-Mehmet Kaya
+Kaya M.
 \end_layout
 
 \end_inset
@@ -187,7 +200,7 @@ Mehmet Kaya
 
 \end_inset
 
- ve 
+, 
 \begin_inset Flex AuthorNameEQ
 status open
 
@@ -206,7 +219,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-John Doe
+Doe J.
 \end_layout
 
 \end_inset
@@ -242,7 +255,7 @@ Res.
  Assist., Civil Eng.
  Dept.
  Univ.
- of ABC, Istanbul
+ of ABC, Istanbul, Turkey
 \end_layout
 
 \end_inset
@@ -279,7 +292,7 @@ Prof.
  Dr., Civil Eng.
  Dept.
  Univ.
- of ABC, Istanbul
+ of ABC, Istanbul, Turkey
 \end_layout
 
 \end_inset
@@ -412,7 +425,15 @@ blindtext
 
 \begin_layout Standard
 Görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
- Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır (
+ Hatalı sonuçlar için başka yorumların yapılması uygun 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Skinner1993"
+literal "false"
+
+\end_inset
+
+ olacaktır (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Skinner1993"
@@ -493,6 +514,15 @@ literal "false"
 \end_inset
 
 'de gösterildiği üzere, yapılan çalışmaların uygun olduğu anlaşılmaktadır.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bekin2018-MSThesis,Constantinou2011"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -530,7 +560,7 @@ status open
 
  
 \begin_inset Graphics
-	filename b.png
+	filename b.PNG
 	lyxscale 50
 	scale 20
 
@@ -647,7 +677,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.png
+	filename b.PNG
 	lyxscale 50
 	scale 40
 
@@ -1497,7 +1527,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.png
+	filename b.PNG
 	lyxscale 50
 	scale 40
 

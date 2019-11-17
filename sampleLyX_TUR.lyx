@@ -15,8 +15,8 @@
 \DefineBibliographyStrings{english}{%
 	references = {KAYNAKLAR},
 	and = {ve},
-	andothers = {vd.},
-	pages = {s.},
+	andothers = {\it v\adddot d\adddot},
+	pages = {},
 	mathesis = {Yüksek Lisans Tezi},
 	phdthesis = {Doktora Tezi},
 	techreport = {Teknik Rapor},}
@@ -24,24 +24,40 @@
 
 %%%%% ENGLISH NOTATION FOR BIBLATEX. TURN OFF FOR TURKISH %%%%%
 %\DefineBibliographyStrings{english}{%
+%	andothers = {\it et\addabbrvspace al\adddot},
+%	pages = {},
 %	mathesis = {M.S. Thesis},}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \renewbibmacro{in:}{}
 \DeclareNameAlias{sortname}{family-given}
-\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibbold{\mkbibparens{#1}}}
 \DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
 \DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}\addcomma}
 \DeclareFieldFormat[article]{title}{\mkbibquote{#1\addcomma}}
 \DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+
+%\DeclareDelimFormat{nameyeardelim}{\addcomma\space}
+%\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+\renewcommand*{\bibpagespunct}{\addcolon}
+\renewcommand*{\multicitedelim}{\addsemicolon\space}
+\renewcommand*{\revsdnamepunct}{}
+%\renewcommand*{\finalnamedelim}{\addcomma \addspace \bibstring {and}\space}
+%\renewcommand*{\finalnamedelim}{\addcomma\space}
+
 
 \renewbibmacro*{volume+number+eid}{%
 	\printfield{volume}%
 	%  \setunit*{\adddot}% DELETED
 	\setunit*{\addnbthinspace}% \addnbthinspace or \addnbspace
 	\printfield{number}%
-	\setunit{\addcomma\space}%
-	\printfield{eid}}
+	%\setunit*{\addcolon}%
+	%\printfield{eid}
+}
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{day}}
 }
 \end_preamble
 \use_default_options true
@@ -85,7 +101,7 @@
 \cite_engine biblatex
 \cite_engine_type authoryear
 \biblio_style plain
-\biblio_options style=authoryear,maxcitenames=2,maxbibnames=10, doi=false,isbn=false,url=false,eprint=false,giveninits
+\biblio_options style=authoryear,maxcitenames=2,maxbibnames=10, doi=false,isbn=false,url=false,eprint=false,giveninits, terseinits=true, dashed=false, uniquelist=false
 \biblatex_bibstyle authoryear
 \biblatex_citestyle authoryear
 \use_bibtopic false
@@ -146,7 +162,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-Ahmet Yılmaz
+Yılmaz A.S.
 \end_layout
 
 \end_inset
@@ -175,7 +191,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-Mehmet Kaya
+Kaya M.C.
 \end_layout
 
 \end_inset
@@ -204,7 +220,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-John Doe
+Doe H.
 \end_layout
 
 \end_inset
@@ -238,7 +254,7 @@ status open
 \begin_layout Plain Layout
 Araş.
  Gör., İnşaat Müh.
- Bölümü, Abece Üniversitesi, Güzelkent
+ Bölümü, Abece Üniversitesi, Güzelkent, Türkiye
 \end_layout
 
 \end_inset
@@ -273,7 +289,7 @@ status open
 \begin_layout Plain Layout
 Prof.
  Dr., Jeofizik Müh.
- Bölümü, Abece Teknik Üniversitesi, Büyükkent
+ Bölümü, Abece Teknik Üniversitesi, Büyükkent, Türkiye
 \end_layout
 
 \end_inset
@@ -314,7 +330,7 @@ bariserkus@itu.edu.tr
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -434,7 +450,15 @@ blindtext
 
 \begin_layout Standard
 Görüldüğü üzere, sonuçların doğru olduğu anlaşılmaktadır.
- Hatalı sonuçlar için başka yorumların yapılması uygun olacaktır (
+ Hatalı sonuçlar için başka yorumların yapılması 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Skinner1993"
+literal "false"
+
+\end_inset
+
+ uygun olacaktır (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Skinner1993"
@@ -514,27 +538,24 @@ literal "false"
 
 \end_inset
 
-'de gösterildiği üzere, yapılan çalışmaların uygun olduğu anlaşılmaktadır.
-\end_layout
+'de gösterildiği üzere,
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Narasimhan2006,Newmark1959method,ZayasLowMahin1990"
+literal "false"
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
+\end_inset
 
-\begin_layout Plain Layout
-
-
-\backslash
-blindtext
-\end_layout
+ yapılan çalışmaların uygun olduğu anlaşılmaktadır.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bekin2018-MSThesis,Constantinou2011"
+literal "false"
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Diğer Bilgiler
 \end_layout
 
 \begin_layout Standard
@@ -543,7 +564,7 @@ lines 0
 placement r
 overhang 0col%
 width "40text%"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -552,7 +573,7 @@ status open
 
  
 \begin_inset Graphics
-	filename b.png
+	filename b.PNG
 	lyxscale 50
 	scale 20
 
@@ -583,6 +604,26 @@ Bir bina yapısı.
 \end_inset
 
 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+blindtext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diğer Bilgiler
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status collapsed
 
@@ -669,7 +710,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.png
+	filename b.PNG
 	lyxscale 50
 	scale 40
 
@@ -1519,7 +1560,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename b.png
+	filename b.PNG
 	lyxscale 50
 	scale 40
 
